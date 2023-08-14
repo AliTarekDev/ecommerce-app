@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+/* ltr.scss */
+.ltr {
+  /* Add your LTR styles here */
+
+  .all {
+    pointer-events: all;
+    // background-color: red !important
+  }
+}
+
+/* rtl.scss */
+.rtl {
+  /* Add your RTL styles here */
+}
+
+.ltr {
+  direction: ltr;
+}
+
+.rtl {
+  direction: rtl;
+}
