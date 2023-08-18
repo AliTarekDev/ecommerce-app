@@ -33,10 +33,4 @@ export class AppComponent implements OnInit {
       document.body.classList.add('ltr');
     }
   }
-
-  changeLang(lang: string) {
-    this.languageService.changeLanguage(lang);
-    this.setDirection();
-    this._router.navigate([lang, 'home']);
-  }
 }
