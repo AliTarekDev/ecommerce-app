@@ -1,16 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { NavLayoutComponent } from './layout/nav-layout/nav-layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/en/home',
+    redirectTo: 'en/home',
     pathMatch: 'full',
   },
   {
-    path: ':lang/home',
-    component: HomeComponent,
+    path: '',
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: '',
+    component: NavLayoutComponent,
+    children: [
+      {
+        path: ':lang/home',
+        loadChildren: () =>
+          import('./layout/layout.module').then((m) => m.LayoutModule),
+      },
+    ],
   },
 ];
 

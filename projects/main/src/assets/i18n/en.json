@@ -2,5 +2,7 @@
   "currentTheme": "ltr",
   "home": "Home",
   "logo": "Logo",
-  "lang": "language"
+  "lang": "language",
+  "products": "products",
+  "about": "about"
 }
