@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SharedModule } from '../modules/shared/shared.module';
 import { NavLayoutComponent } from './nav-layout/nav-layout.component';
+import { FeaturedProductsComponent } from './components/featured-products/featured-products.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { NavLayoutComponent } from './nav-layout/nav-layout.component';
     FooterComponent,
     HeaderComponent,
     NavLayoutComponent,
+    FeaturedProductsComponent,
   ],
-  imports: [CommonModule, LayoutRoutingModule, SharedModule],
+  imports: [CommonModule, LayoutRoutingModule, SharedModule, CarouselModule],
 })
 export class LayoutModule {}

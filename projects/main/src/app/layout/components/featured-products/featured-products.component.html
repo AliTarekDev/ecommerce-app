@@ -1,0 +1,21 @@
+<section class="main-product">
+  <div class="container container-two">
+    <app-section-title>
+      <h3>
+        {{ "welcomeTo" | translate }} <span>{{ "products" | translate }}</span>
+      </h3>
+    </app-section-title>
+
+    <div class="row">
+      <div class="col-xl-12 mt-4">
+        <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let slide of products">
+            <ng-template carouselSlide>
+              <app-product-item [product]="slide"></app-product-item>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</section>
