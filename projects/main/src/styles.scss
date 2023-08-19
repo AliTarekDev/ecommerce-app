@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* ltr.scss */
+
 body::-webkit-scrollbar {
   width: 10px;
 }
@@ -1834,7 +1835,7 @@ a.btn-two::after {
   top: 0;
   width: 250px;
   height: 30px;
-  // background-image: url(../../media/images/icon/line.png);
+  background-image: url(./assets/images/icon/line.png);
   background-repeat: no-repeat;
   background-position: center;
   top: 40px;

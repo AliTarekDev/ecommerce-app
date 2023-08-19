@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { SectionTitleComponent } from './section-title/section-title.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule],
-  exports: [TranslateModule],
+  declarations: [SectionTitleComponent],
+  imports: [CommonModule, CarouselModule],
+  exports: [TranslateModule, SectionTitleComponent],
 })
 export class SharedModule {}
