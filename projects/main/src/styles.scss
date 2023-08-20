@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* ltr.scss */
+
 body::-webkit-scrollbar {
   width: 10px;
 }
@@ -13,7 +14,7 @@ body::-webkit-scrollbar-thumb {
   outline: 1px solid #d19e66;
 }
 body {
-  height: 100000px !important;
+  // height: 100000px !important;
 }
 .active {
   color: #d19e66;
@@ -1834,7 +1835,7 @@ a.btn-two::after {
   top: 0;
   width: 250px;
   height: 30px;
-  // background-image: url(../../media/images/icon/line.png);
+  background-image: url(./assets/images/icon/line.png);
   background-repeat: no-repeat;
   background-position: center;
   top: 40px;
@@ -2384,7 +2385,7 @@ a.btn-two::after {
   ##  Features
   --------------------------------------------------------------*/
 .feature-area {
-  // background: #fff url("../../media/images/bg/1.jpg") no-repeat center;
+  background: #fff url("./assets/images/bg/1.jpg") no-repeat center;
   background-size: cover;
   padding: 105px 0;
 }

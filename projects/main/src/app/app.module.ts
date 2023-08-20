@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './home/home.component';
 import { DirectionDirective } from './directives/direction.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
-  declarations: [AppComponent, HomeComponent, DirectionDirective],
+  declarations: [AppComponent, DirectionDirective],
   imports: [
     BrowserModule,
     AppRoutingModule,
