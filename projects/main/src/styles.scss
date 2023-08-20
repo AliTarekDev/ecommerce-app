@@ -14,7 +14,7 @@ body::-webkit-scrollbar-thumb {
   outline: 1px solid #d19e66;
 }
 body {
-  height: 100000px !important;
+  // height: 100000px !important;
 }
 .active {
   color: #d19e66;
@@ -2385,7 +2385,7 @@ a.btn-two::after {
   ##  Features
   --------------------------------------------------------------*/
 .feature-area {
-  // background: #fff url("../../media/images/bg/1.jpg") no-repeat center;
+  background: #fff url("./assets/images/bg/1.jpg") no-repeat center;
   background-size: cover;
   padding: 105px 0;
 }

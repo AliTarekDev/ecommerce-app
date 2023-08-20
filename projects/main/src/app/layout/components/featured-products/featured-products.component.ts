@@ -7,6 +7,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./featured-products.component.scss'],
 })
 export class FeaturedProductsComponent {
+  constructor() {}
   products = [
     { image: './assets/images/featured/2.jpg' },
     { image: './assets/images/featured/2.jpg' },

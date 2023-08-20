@@ -4,10 +4,16 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SectionTitleComponent } from './section-title/section-title.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ProductItemComponent } from './components/product-item/product-item.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [SectionTitleComponent, ProductItemComponent],
+  declarations: [SectionTitleComponent, ProductItemComponent, FooterComponent],
   imports: [CommonModule, CarouselModule],
-  exports: [TranslateModule, SectionTitleComponent, ProductItemComponent],
+  exports: [
+    TranslateModule,
+    SectionTitleComponent,
+    ProductItemComponent,
+    FooterComponent,
+  ],
 })
 export class SharedModule {}

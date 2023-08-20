@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language.service';
 import { Router } from '@angular/router';
@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
     private _router: Router
   ) {}
 
+  hideScrollBtn = false;
   ngOnInit(): void {
     this.languageService.setInitialAppLanguage();
     this.setDirection();
