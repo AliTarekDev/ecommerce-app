@@ -1,0 +1,72 @@
+<section class="banner-product">
+  <div class="container container-two">
+    <app-section-title>
+      <h3>
+        {{ "NEW" | translate }} <span>{{ "TRENDING" | translate }}</span>
+      </h3>
+    </app-section-title>
+    <!-- section-heading-->
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <!-- Single Product-->
+        <div class="sin-product">
+          <div class="pro-img">
+            <img src="./assets/images/product/b1.jpg" alt="" />
+          </div>
+          <div class="mid-wrapper style-two">
+            <h5 class="pro-title">
+              <a href="product.html">Colorfull long dress</a>
+            </h5>
+            <div class="rating">
+              <ul>
+                <li>
+                  <a href="#"><i class="fas fa-star"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-star"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-star"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-star"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-star-half"></i></a>
+                </li>
+              </ul>
+            </div>
+            <span>$60.00</span>
+          </div>
+          <div class="pro-icon">
+            <ul>
+              <li>
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </li>
+              <li>
+                <a class="trigger" href="#"
+                  ><i class="fa-solid fa-magnifying-glass-plus"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <owl-carousel-o [options]="customOptions" dir="ltr">
+          <ng-container *ngFor="let slide of products">
+            <ng-template carouselSlide>
+              <app-product-item [product]="slide"></app-product-item>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- Container-two  -->
+</section>

@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 /* ltr.scss */
 
+$mainColor: #d19e66;
+
 body::-webkit-scrollbar {
   width: 10px;
 }
@@ -34,11 +36,11 @@ body {
 }
 
 .ltr {
-  direction: ltr;
+  direction: ltr !important;
 }
 
 .rtl {
-  direction: rtl;
+  direction: rtl !important;
 }
 /*!
   Theme Name: Comercio-Fashion Shop Ecommerce HTML Template

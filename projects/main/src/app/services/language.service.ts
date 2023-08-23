@@ -8,6 +8,7 @@ export class LanguageService {
   constructor(private translateService: TranslateService) {}
 
   setInitialAppLanguage() {
+    debugger;
     let language = this.getLanguageFromUrl();
     if (language) {
       this.translateService.use(language);
@@ -22,6 +23,7 @@ export class LanguageService {
   }
 
   getLanguageFromUrl(): string {
+    debugger;
     const urlLang = window.location.pathname.split('/')[1];
     const supportedLanguages = ['en', 'ar'];
     return supportedLanguages.includes(urlLang) ? urlLang : '';
