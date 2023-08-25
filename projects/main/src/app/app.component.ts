@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
   }
 
   setDirection() {
-    debugger;
     const currentLang = this.languageService.getCurrentLanguage();
     if (currentLang === 'ar') {
       document.documentElement.setAttribute('dir', 'rtl');

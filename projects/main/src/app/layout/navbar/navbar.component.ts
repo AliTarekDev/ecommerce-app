@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,17 +9,17 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(
-    public languageService: LanguageService,
-    private translate: TranslateService
-  ) {}
-
+  constructor(public languageService: LanguageService) {}
+  selectedLang: string = 'en';
   ngOnInit(): void {}
 
   setDirection() {
     debugger;
-    const currentLang = this.languageService.getCurrentLanguage();
-    if (currentLang === 'ar') {
+    // const currentLang = this.languageService.getCurrentLanguage();
+
+    const selectedLang = this.selectedLang;
+
+    if (selectedLang === 'ar') {
       document.documentElement.setAttribute('dir', 'rtl');
       document.body.classList.remove('ltr');
       document.body.classList.add('rtl');
@@ -31,6 +32,7 @@ export class NavbarComponent implements OnInit {
 
   changeLang(lang: string) {
     debugger;
+    this.selectedLang = lang;
     this.languageService.changeLanguage(lang);
     this.setDirection();
   }
