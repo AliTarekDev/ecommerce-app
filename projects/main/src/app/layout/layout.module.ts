@@ -10,6 +10,8 @@ import { NavLayoutComponent } from './nav-layout/nav-layout.component';
 import { FeaturedProductsComponent } from './components/featured-products/featured-products.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FeatureAreaComponent } from './feature-area/feature-area.component';
+import { TrendingComponent } from './components/trending/trending.component';
+import { ProductBannerComponent } from './product-banner/product-banner.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { FeatureAreaComponent } from './feature-area/feature-area.component';
     NavLayoutComponent,
     FeaturedProductsComponent,
     FeatureAreaComponent,
+    TrendingComponent,
+    ProductBannerComponent,
   ],
   imports: [CommonModule, LayoutRoutingModule, SharedModule, CarouselModule],
 })
