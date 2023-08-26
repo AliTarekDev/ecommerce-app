@@ -9,7 +9,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.indicatorStyle();
     this.getHeaderHight();
-    this.scrollToTopAction();
   }
 
   getHeaderHight() {
@@ -18,23 +17,6 @@ export class HeaderComponent implements OnInit {
       .getBoundingClientRect().height;
 
     return headerHeight;
-  }
-
-  scrollToTopAction() {
-    const scrollBtn = document.querySelector('.backtotop');
-    scrollBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    });
-    scrollBtn.classList.add('hide');
-    const headerHeight = this.getHeaderHight();
-
-    window.addEventListener('scroll', function () {
-      if (this.scrollY >= headerHeight - 55) scrollBtn.classList.remove('hide');
-      else scrollBtn.classList.add('hide');
-    });
   }
 
   indicatorStyle() {

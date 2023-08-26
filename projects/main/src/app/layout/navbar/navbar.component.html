@@ -32,7 +32,12 @@
         </li>
 
         <li class="nav-item">
-          {{ "products" | translate }}
+          <a
+            class="nav-link"
+            [routerLink]="[selectedLang + '/product/product-list']"
+          >
+            {{ "shop" | translate }}</a
+          >
         </li>
       </ul>
     </div>

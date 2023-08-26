@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.languageService.setInitialAppLanguage();
     this.setDirection();
+    this.scrollToTopAction();
   }
 
   setDirection() {
@@ -32,5 +33,23 @@ export class AppComponent implements OnInit {
       document.body.classList.remove('rtl');
       document.body.classList.add('ltr');
     }
+  }
+
+  scrollToTopAction() {
+    debugger;
+    const scrollBtn = document.querySelector('.backtotop');
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    });
+    scrollBtn.classList.add('hide');
+    //const headerHeight = this.getHeaderHight();
+
+    window.addEventListener('scroll', function () {
+      if (this.scrollY >= 500) scrollBtn.classList.remove('hide');
+      else scrollBtn.classList.add('hide');
+    });
   }
 }
