@@ -8,27 +8,21 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class TrendingComponent {
   products = [
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
-    { image: './assets/images/product/10.jpg' },
+    { image: './assets/images/styles/مكتب.jpg' },
+    { image: './assets/images/styles/مكتب غرفة.jpg' },
+    { image: './assets/images/styles/مطبخ2.jpg' },
+    { image: './assets/images/styles/مطبخ.jpg' },
+    { image: './assets/images/styles/لوبي محمد 3.jpg' },
   ];
+
+  products2 = [
+    { image: './assets/images/styles/كنب رمادي 2.jpg' },
+    { image: './assets/images/styles/كنب بيج.jpg' },
+    { image: './assets/images/styles/كنب بني زاوية.jpg' },
+    { image: './assets/images/styles/كنب اخضر معتمد.jpg' },
+    { image: './assets/images/styles/كنب ابيض.jpg' },
+  ];
+
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,

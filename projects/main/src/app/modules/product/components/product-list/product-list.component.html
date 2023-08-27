@@ -27,19 +27,60 @@
       <div class="order-2 order-lg-1 col-lg-3 col-xl-3">
         <div class="shop-sidebar left-side">
           <div class="sidebar-widget sidebar-search">
-            <input type="text" placeholder="Search Product...." />
-            <button type="submit"><i class="fas fa-search"></i></button>
+            <input
+              type="text"
+              placeholder="{{ 'searchProduct' | translate }}...."
+            />
+            <button
+              type="submit"
+              [ngStyle]="{
+                right: _translate.getCurrentLanguage() == 'ar' ? '80%' : 0
+              }"
+            >
+              <i class="fas fa-search"></i>
+            </button>
           </div>
           <div class="sidebar-widget category-widget">
             <h6>PRODUCT CATEGORIES</h6>
             <ul>
-              <li><a href="#">Category 1 </a> <span>(19)</span></li>
-              <li><a href="#">Category 1 </a> <span>(15)</span></li>
-              <li><a href="#">Category 1 </a> <span>(59)</span></li>
-              <li><a href="#">Category 1 </a> <span>(29)</span></li>
-              <li><a href="#">Category 1</a> <span>(56)</span></li>
-              <li><a href="#">Category 1 </a> <span>(48)</span></li>
-              <li><a href="#">Category 1 </a> <span>(11)</span></li>
+              <li>
+                <a href="#">{{ "bedRoom" | translate }} </a> <span>(19)</span>
+              </li>
+              <li>
+                <a href="#">{{ "SofasAndBoards" | translate }} </a>
+                <span>(15)</span>
+              </li>
+              <li>
+                <a href="#">{{ "woodenDecorations" | translate }} </a>
+                <span>(59)</span>
+              </li>
+              <li>
+                <a href="#">{{ "tVOffices" | translate }} </a> <span>(29)</span>
+              </li>
+              <li>
+                <a href="#">{{ "chairsAndTables" | translate }}</a>
+                <span>(56)</span>
+              </li>
+              <li>
+                <a href="#">{{ "curtains" | translate }}</a> <span>(48)</span>
+              </li>
+              <li>
+                <a href="#">{{ "mattresses" | translate }}</a> <span>(11)</span>
+              </li>
+              <li>
+                <a href="#">{{ "kitchens" | translate }}</a> <span>(11)</span>
+              </li>
+              <li>
+                <a href="#">{{ "mattresses" | translate }}</a> <span>(11)</span>
+              </li>
+              <li>
+                <a href="#">{{ "officeFurniture" | translate }}</a>
+                <span>(11)</span>
+              </li>
+              <li>
+                <a href="#">{{ "WoodenDoorsAndPanels" | translate }}</a>
+                <span>(11)</span>
+              </li>
             </ul>
           </div>
 
@@ -913,7 +954,7 @@
           </div>
           <!-- /.tab-content -->
           <div class="load-more-wrapper">
-            <a href="create-account.html" class="btn-two">Load More</a>
+            <a class="btn-two">{{ "loadMore" | translate }}</a>
           </div>
           <!-- /.load-more-wrapper -->
         </div>
