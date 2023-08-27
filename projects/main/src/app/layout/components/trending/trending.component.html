@@ -9,9 +9,9 @@
     <div class="row justify-content-center">
       <div class="col-md-4">
         <!-- Single Product-->
-        <div class="sin-product">
+        <div class="sin-product prod">
           <div class="pro-img">
-            <img src="./assets/images/product/b1.jpg" alt="" />
+            <img src="./assets/images/styles/صالة اخييرة.jpg" alt="" />
           </div>
           <div class="mid-wrapper style-two">
             <h5 class="pro-title">
@@ -59,6 +59,14 @@
       <div class="col-md-8">
         <owl-carousel-o [options]="customOptions" dir="ltr">
           <ng-container *ngFor="let slide of products">
+            <ng-template carouselSlide>
+              <app-product-item [product]="slide"></app-product-item>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+
+        <owl-carousel-o [options]="customOptions" dir="ltr">
+          <ng-container *ngFor="let slide of products2">
             <ng-template carouselSlide>
               <app-product-item [product]="slide"></app-product-item>
             </ng-template>
