@@ -6,7 +6,7 @@
   "products": "products",
   "about": "about",
   "welcomeTo": "welcome to",
-  "shop": "Shop",
+  "shop": "shop",
   "bedRoom": "bed room",
   "SofasAndBoards": "Sofas and boards",
   "woodenDecorations": "wooden decorations",
@@ -18,5 +18,6 @@
   "officeFurniture": "office Furniture",
   "WoodenDoorsAndPanels": "Wooden Doors and Panels",
   "loadMore": "load more",
-  "searchProduct": "search Product"
+  "searchProduct": "search Product",
+  "contactUs": "contact"
 }

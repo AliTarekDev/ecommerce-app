@@ -1,13 +1,12 @@
-<!--=========================-->
-<!--=        Breadcrumb         =-->
-<!--=========================-->
-
 <section class="breadcrumb-area">
   <div class="container-fluid custom-container">
     <div class="row">
       <div class="col-xl-12">
         <div class="bc-inner">
-          <p><a routerLink="/">Home |</a> Shop</p>
+          <p>
+            <a routerLink="/">{{ "home" | translate }} |</a>
+            {{ "shop" | translate }}
+          </p>
         </div>
       </div>
       <!-- /.col-xl-12 -->
@@ -112,7 +111,7 @@
             <h6>BEST SELLERS</h6>
             <div class="wid-pro">
               <div class="sp-img">
-                <img src="./assets/images/product/sb1.jpg" alt="" />
+                <img src="./assets/images/styles/مطبخ.jpg" alt="" />
               </div>
               <div class="small-pro-details">
                 <h5 class="title"><a href="#">Contrasting </a></h5>
@@ -142,7 +141,7 @@
 
             <div class="wid-pro">
               <div class="sp-img">
-                <img src="./assets/images/product/sb2.jpg" alt="" />
+                <img src="./assets/images/styles/كومدينا 2.jpg" alt="" />
               </div>
               <div class="small-pro-details">
                 <h5 class="title"><a href="#">Contrasting</a></h5>
@@ -172,7 +171,7 @@
 
             <div class="wid-pro">
               <div class="sp-img">
-                <img src="./assets/images/product/sb3.jpg" alt="" />
+                <img src="./assets/images/styles/ككككرسي.jpg" alt="" />
               </div>
               <div class="small-pro-details">
                 <h5 class="title"><a href="#">Contrasting </a></h5>
@@ -202,7 +201,7 @@
 
             <div class="wid-pro">
               <div class="sp-img">
-                <img src="./assets/images/product/sb4.jpg" alt="" />
+                <img src="./assets/images/styles/مكتب.jpg" alt="" />
               </div>
               <div class="small-pro-details">
                 <h5 class="title"><a href="#">Contrasting </a></h5>
@@ -233,7 +232,7 @@
 
           <div class="sidebar-widget advertise-img">
             <a href="#" class="img">
-              <img src="./assets/images/banner/sb1.jpg" alt="" />
+              <img src="./assets/images/styles/مطبخ2.jpg" alt="" />
             </a>
           </div>
         </div>
@@ -294,10 +293,10 @@
               aria-labelledby="home-tab"
             >
               <div class="row">
-                <div class="col-sm-6 col-xl-4">
+                <div class="col-sm-6 col-xl-4" *ngFor="let product of products">
                   <div class="sin-product style-two">
                     <div class="pro-img">
-                      <img src="./assets/images/product/sp1.jpg" alt="" />
+                      <img [src]="product.image" alt="" />
                     </div>
                     <div class="mid-wrapper">
                       <h5 class="pro-title">
@@ -325,7 +324,9 @@
                             ></a>
                           </li>
                           <li>
-                            <a href="#" class="trigger"
+                            <a
+                              class="trigger"
+                              (click)="goToDetailsPage(product)"
                               ><i class="fa-solid fa-eye"></i
                             ></a>
                           </li>
@@ -953,8 +954,16 @@
             <!-- /.tab-pane-->
           </div>
           <!-- /.tab-content -->
-          <div class="load-more-wrapper">
-            <a class="btn-two">{{ "loadMore" | translate }}</a>
+          <div class="load-more-wrapper d-flex justify-content-center">
+            <!-- <a class="btn-two">{{ "loadMore" | translate }}</a> -->
+
+            <mat-paginator
+              [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page"
+            >
+            </mat-paginator>
           </div>
           <!-- /.load-more-wrapper -->
         </div>

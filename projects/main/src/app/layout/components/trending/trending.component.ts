@@ -1,3 +1,10 @@
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { Component } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
@@ -5,6 +12,14 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   selector: 'app-trending',
   templateUrl: './trending.component.html',
   styleUrls: ['./trending.component.scss'],
+  animations: [
+    trigger('fade', [
+      transition('void=> *', [
+        style({ backgroundColor: 'yellow', opacity: 0 }),
+        animate(2000, style({ backgroundColor: 'white', opacity: 1 })),
+      ]),
+    ]),
+  ],
 })
 export class TrendingComponent {
   products = [
