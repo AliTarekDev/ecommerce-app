@@ -30,6 +30,13 @@ const routes: Routes = [
             (m) => m.ProductModule
           ),
       },
+      {
+        path: ':lang/contact',
+        loadChildren: () =>
+          import('./modules/contact/contact.module').then(
+            (m) => m.ContactModule
+          ),
+      },
     ],
   },
 ];
