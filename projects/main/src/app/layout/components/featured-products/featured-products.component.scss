@@ -1,3 +1,20 @@
-:ng-deep .owl-prev {
-  color: #000 !important;
+$mainColor: #d19e66;
+
+::ng-deep .owl-theme .owl-nav [class*="owl-"] {
+  background: $mainColor !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    opacity: 0.8;
+  }
+
+  i {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
 }
