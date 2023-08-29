@@ -5,6 +5,7 @@ import { SectionTitleComponent } from './section-title/section-title.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { FooterComponent } from './footer/footer.component';
+import { NgxSliderModule } from 'ngx-slider-v2';
 
 @NgModule({
   declarations: [SectionTitleComponent, ProductItemComponent, FooterComponent],
@@ -14,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
     SectionTitleComponent,
     ProductItemComponent,
     FooterComponent,
+    NgxSliderModule,
   ],
 })
 export class SharedModule {}

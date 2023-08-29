@@ -1,0 +1,63 @@
+::ng-deep .ngx-slider .ngx-slider-bar {
+  border: 0px solid #c5c5c5;
+  background: #f1f1f1;
+  border-radius: 0px;
+  height: 6px;
+  margin-left: 12px;
+  margin-right: 10px;
+}
+
+::ng-deep .ngx-slider .ngx-slider-pointer {
+  border: 2px solid #b35f03;
+  background: #b35f03 !important;
+  font-weight: normal;
+  color: #121212 !important;
+  border-radius: 50px;
+  height: 16px !important;
+  width: 16px !important;
+  top: -7px !important;
+  &::after {
+    content: none !important;
+  }
+}
+
+::ng-deep .ngx-slider.animate .ngx-slider-selection {
+  background: #b35f03 !important;
+}
+
+.sidebar-search {
+  position: relative;
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.sp-img {
+  width: 94px;
+  img {
+    width: 100%;
+    height: 88px;
+  }
+}
+
+.advertise-img {
+  height: 519px;
+  img {
+    width: 100%;
+    height: 519px;
+  }
+}
+
+.pro-img {
+  img {
+    height: 545px;
+  }
+}
+
+.mid-wrapper {
+  p {
+    text-align: center;
+  }
+}

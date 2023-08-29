@@ -9,14 +9,13 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class FeaturedProductsComponent {
   constructor() {}
   products = [
-    { image: './assets/images/featured/2.jpg' },
-    { image: './assets/images/featured/2.jpg' },
-    { image: './assets/images/featured/2.jpg' },
-    { image: './assets/images/featured/2.jpg' },
-    { image: './assets/images/featured/2.jpg' },
-    { image: './assets/images/featured/2.jpg' },
-    { image: './assets/images/featured/2.jpg' },
-    { image: './assets/images/featured/2.jpg' },
+    { image: './assets/images/styles/طاولة خدمة1.jpg' },
+    { image: './assets/images/styles/طاولة 3.jpg' },
+    { image: './assets/images/styles/طاولة غرفة.jpg' },
+    { image: './assets/images/styles/طاولة طعام حميد.jpg' },
+    { image: './assets/images/styles/طاولة طعام الزيني.jpg' },
+    { image: './assets/images/styles/طاولة طعام 1.jpg' },
+    { image: './assets/images/styles/غرفة زيتي 2.jpg' },
   ];
   customOptions: OwlOptions = {
     loop: true,
@@ -40,11 +39,11 @@ export class FeaturedProductsComponent {
         items: 3,
       },
       940: {
-        items: 3,
+        items: 4,
       },
     },
     nav: true,
-    margin: 20,
+    margin: 15,
     // center: true,
   };
 }

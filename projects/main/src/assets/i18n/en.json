@@ -5,5 +5,19 @@
   "lang": "language",
   "products": "products",
   "about": "about",
-  "welcomeTo": "welcome to"
+  "welcomeTo": "welcome to",
+  "shop": "shop",
+  "bedRoom": "bed room",
+  "SofasAndBoards": "Sofas and boards",
+  "woodenDecorations": "wooden decorations",
+  "tVOffices": "tV offices",
+  "chairsAndTables": "chairs and tables",
+  "curtains": "curtains",
+  "mattresses": "mattresses",
+  "kitchens": "kitchens",
+  "officeFurniture": "office Furniture",
+  "WoodenDoorsAndPanels": "Wooden Doors and Panels",
+  "loadMore": "load more",
+  "searchProduct": "search Product",
+  "contactUs": "contact"
 }

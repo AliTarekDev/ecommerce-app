@@ -22,6 +22,21 @@ const routes: Routes = [
         loadChildren: () =>
           import('./layout/layout.module').then((m) => m.LayoutModule),
       },
+
+      {
+        path: ':lang/product',
+        loadChildren: () =>
+          import('./modules/product/product.module').then(
+            (m) => m.ProductModule
+          ),
+      },
+      {
+        path: ':lang/contact',
+        loadChildren: () =>
+          import('./modules/contact/contact.module').then(
+            (m) => m.ContactModule
+          ),
+      },
     ],
   },
 ];
