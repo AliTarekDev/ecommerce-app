@@ -43,8 +43,8 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  goToDetailsPage(img) {
-    this._router.navigate([`/en/product/product-details/${'1'}`]);
+  goToDetailsPage(product: any) {
+    this._router.navigate([`/en/product/product-details/${product.id}`]);
   }
 
   /*** Pagination */

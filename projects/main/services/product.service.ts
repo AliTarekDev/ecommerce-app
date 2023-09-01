@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
+import { Product } from '../src/app/modules/product/interfaces/product.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -18,5 +19,9 @@ export class ProductService {
         console.log(res);
       })
     );
+  }
+
+  getProduct(id: any): Observable<Product> {
+    return this.http.get<Product>(`${this.apiUrl}products/${id}`);
   }
 }
