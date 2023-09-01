@@ -958,10 +958,14 @@
             <!-- <a class="btn-two">{{ "loadMore" | translate }}</a> -->
 
             <mat-paginator
-              [length]="100"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]"
+              [length]="pagination?.total"
+              [pageSize]="paginationOptions?.pageSize"
+              [pageIndex]="paginationOptions?.pageNumber"
+              [pageSizeOptions]="[15]"
               aria-label="Select page"
+              [hidePageSize]="true"
+              (page)="pageChange($event)"
+              showFirstLastButtons="true"
             >
             </mat-paginator>
           </div>

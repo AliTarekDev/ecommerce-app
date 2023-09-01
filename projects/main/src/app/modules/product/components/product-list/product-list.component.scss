@@ -1,3 +1,5 @@
+$mainColor: #d19e66;
+
 ::ng-deep .ngx-slider .ngx-slider-bar {
   border: 0px solid #c5c5c5;
   background: #f1f1f1;
@@ -61,3 +63,8 @@
     text-align: center;
   }
 }
+
+// ::ng-deep.mat-mdc-icon-button.mat-mdc-button-base {
+//   background-color: $mainColor;
+//   margin: 0px 10px;
+// }

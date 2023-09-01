@@ -9,6 +9,8 @@ import { NgxSliderModule } from 'ngx-slider-v2';
 import { SocialContactComponent } from './components/product-item/social-contact/social-contact.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { PaginationComponent } from './components/product-item/pagination/pagination.component';
+import { MaterialModule } from '../../material/material.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     ProductItemComponent,
     FooterComponent,
     SocialContactComponent,
+    PaginationComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +32,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
         deps: [HttpClient],
       },
     }),
+    MaterialModule,
   ],
   exports: [
     TranslateModule,
@@ -38,6 +42,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     NgxSliderModule,
     SocialContactComponent,
     TranslateModule,
+    PaginationComponent,
   ],
 })
 export class SharedModule {}
