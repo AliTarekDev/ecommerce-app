@@ -24,30 +24,35 @@ export class ProductListComponent implements OnInit {
     private _router: Router
   ) {}
 
-  products = [
-    { image: './assets/images/styles/تيفي2.jpg' },
-    { image: './assets/images/styles/تيفي ماستر.jpg' },
-    { image: './assets/images/styles/تلفزيون جيزان copy.jpg' },
-    { image: './assets/images/styles/تسريحة زيني.jpg' },
-    { image: './assets/images/styles/تسريحة الخبر.jpg' },
-    { image: './assets/images/styles/تسريحة ازرق معدلة.jpg' },
-    { image: './assets/images/styles/بووفية22 copy.jpg' },
-    { image: './assets/images/styles/بانر كنب.jpg' },
-    { image: './assets/images/styles/صالة اخييرة.jpg' },
-    { image: './assets/images/styles/سرييرر.jpg' },
-    { image: './assets/images/styles/سرير فندقي.jpg' },
-    { image: './assets/images/styles/ديكورات خشبية1.jpg' },
-    { image: './assets/images/styles/ديكور جدراي.jpg' },
-    { image: './assets/images/styles/ديكور جداري.jpg' },
-    { image: './assets/images/styles/دولاب.jpg' },
-  ];
+  // products = [
+  //   { image: './assets/images/styles/تيفي2.jpg' },
+  //   { image: './assets/images/styles/تيفي ماستر.jpg' },
+  //   { image: './assets/images/styles/تلفزيون جيزان copy.jpg' },
+  //   { image: './assets/images/styles/تسريحة زيني.jpg' },
+  //   { image: './assets/images/styles/تسريحة الخبر.jpg' },
+  //   { image: './assets/images/styles/تسريحة ازرق معدلة.jpg' },
+  //   { image: './assets/images/styles/بووفية22 copy.jpg' },
+  //   { image: './assets/images/styles/بانر كنب.jpg' },
+  //   { image: './assets/images/styles/صالة اخييرة.jpg' },
+  //   { image: './assets/images/styles/سرييرر.jpg' },
+  //   { image: './assets/images/styles/سرير فندقي.jpg' },
+  //   { image: './assets/images/styles/ديكورات خشبية1.jpg' },
+  //   { image: './assets/images/styles/ديكور جدراي.jpg' },
+  //   { image: './assets/images/styles/ديكور جداري.jpg' },
+  //   { image: './assets/images/styles/دولاب.jpg' },
+  // ];
+
+  products: any[] = [];
 
   ngOnInit(): void {
     this.getProductList();
   }
 
   getProductList() {
-    this._productService.getProductList().subscribe((res: any) => {});
+    this._productService.getProductList().subscribe((res: any) => {
+      console.log(res, 'ress');
+      this.products = res.products;
+    });
   }
 
   goToDetailsPage(img) {

@@ -6,11 +6,11 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductService {
-  apiUrl: string = 'https://marvelhome.com.sa/';
+  apiUrl: string = 'https://marvelhome.com.sa/api/services/';
   constructor(private http: HttpClient) {}
 
   getProductList(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}api/services/products`).pipe(
+    return this.http.get<any>(`${this.apiUrl}products`).pipe(
       tap((res) => {
         console.log(res);
       })
