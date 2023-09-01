@@ -12,6 +12,11 @@ import { LanguageService } from 'projects/main/src/app/services/language.service
 export class ProductListComponent implements OnInit {
   minValue: number = 50;
   maxValue: number = 200;
+  pagination: any = 0;
+  paginationOptions = {
+    pageSize: 15,
+    pageNumber: 0,
+  };
   options: Options = {
     floor: 0,
     ceil: 200,
@@ -24,38 +29,32 @@ export class ProductListComponent implements OnInit {
     private _router: Router
   ) {}
 
-  // products = [
-  //   { image: './assets/images/styles/تيفي2.jpg' },
-  //   { image: './assets/images/styles/تيفي ماستر.jpg' },
-  //   { image: './assets/images/styles/تلفزيون جيزان copy.jpg' },
-  //   { image: './assets/images/styles/تسريحة زيني.jpg' },
-  //   { image: './assets/images/styles/تسريحة الخبر.jpg' },
-  //   { image: './assets/images/styles/تسريحة ازرق معدلة.jpg' },
-  //   { image: './assets/images/styles/بووفية22 copy.jpg' },
-  //   { image: './assets/images/styles/بانر كنب.jpg' },
-  //   { image: './assets/images/styles/صالة اخييرة.jpg' },
-  //   { image: './assets/images/styles/سرييرر.jpg' },
-  //   { image: './assets/images/styles/سرير فندقي.jpg' },
-  //   { image: './assets/images/styles/ديكورات خشبية1.jpg' },
-  //   { image: './assets/images/styles/ديكور جدراي.jpg' },
-  //   { image: './assets/images/styles/ديكور جداري.jpg' },
-  //   { image: './assets/images/styles/دولاب.jpg' },
-  // ];
-
   products: any[] = [];
 
   ngOnInit(): void {
-    this.getProductList();
+    this.getProductList(this.paginationOptions);
   }
 
-  getProductList() {
-    this._productService.getProductList().subscribe((res: any) => {
+  getProductList(requestedData: { pageSize: number; pageNumber: Number }) {
+    this._productService.getProductList(requestedData).subscribe((res: any) => {
       console.log(res, 'ress');
       this.products = res.products;
+      this.pagination = res.pagination;
     });
   }
 
   goToDetailsPage(img) {
     this._router.navigate([`/en/product/product-details/${'1'}`]);
+  }
+
+  /*** Pagination */
+  pageChange(e: any) {
+    console.log(e, 'Event');
+    const { pageSize, pageIndex } = e;
+
+    this.paginationOptions.pageNumber = +pageIndex;
+    this.paginationOptions.pageSize = +pageSize;
+
+    this.getProductList(this.paginationOptions);
   }
 }
