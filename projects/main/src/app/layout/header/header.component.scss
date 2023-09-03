@@ -1,3 +1,4 @@
+$mainColor: #d19e66;
 .carousel-inner {
   img {
     height: 100vh;
@@ -27,7 +28,7 @@
   }
 
   .active {
-    background: #d19e66;
+    background: $mainColor;
     width: 10px;
     height: 28px;
   }
@@ -48,6 +49,16 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
+    // .advirtise {
+    //   position: absolute;
+    //   bottom: -20px;
+    //   left: 0;
+    //   font-size: 33px;
+    //   span {
+    //     display: inline-block;
+    //     color: $mainColor !important;
+    //   }
+    // }
   }
 
   &-data {
@@ -57,4 +68,13 @@
     color: #fff;
     transform: translateX(-50%);
   }
+}
+
+.header-subtitle {
+  display: inline-block;
+  color: $mainColor !important;
+}
+
+.carousel-item-data {
+  text-transform: uppercase;
 }
