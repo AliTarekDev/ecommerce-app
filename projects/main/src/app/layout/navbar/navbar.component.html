@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/">
-      <img src="./assets/images/logo.jpeg" draggable="false" />
+      <img src="./assets/images/logo-removebg-preview.png" draggable="false" />
     </a>
 
     <button
@@ -26,11 +26,11 @@
             aria-current="page"
             routerLink="/"
             routerLinkActive="active"
-            >{{ "home" | translate }}</a
+            >{{ "Home" | translate }}</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link">{{ "about" | translate }}</a>
+          <a class="nav-link" style="cursor: pointer;">{{ "About" | translate }}</a>
         </li>
 
         <li class="nav-item">
@@ -38,13 +38,13 @@
             class="nav-link"
             [routerLink]="[selectedLang + '/product/product-list']"
           >
-            {{ "shop" | translate }}</a
+            {{ "Shop" | translate }}</a
           >
         </li>
 
         <li class="nav-item">
           <a class="nav-link" [routerLink]="[selectedLang + '/contact']">
-            {{ "contactUs" | translate }}</a
+            {{ "ContactUs" | translate }}</a
           >
         </li>
       </ul>
