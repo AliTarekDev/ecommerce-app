@@ -82,3 +82,24 @@ $mainColor: #d19e66;
     right: auto;
   }
 }
+.nav-item-dropdown {
+  position: relative;
+}
+.shop-categories {
+  position: absolute;
+  top: 60px;
+  width: 300px;
+
+  li {
+    margin-bottom: 0.5rem;
+    padding-left: 15px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.show {
+  display: none;
+}

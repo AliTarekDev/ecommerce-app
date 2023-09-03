@@ -9,7 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(public languageService: LanguageService) {}
+  constructor(
+    public languageService: LanguageService,
+    private _router: Router
+  ) {}
   selectedLang: string = 'en';
   ngOnInit(): void {}
 
@@ -46,5 +49,14 @@ export class NavbarComponent implements OnInit {
     const cartDialog = document.querySelector('.cart-drop');
 
     cartDialog?.classList.toggle('active');
+  }
+
+  showList() {
+    const list = document.querySelector('.shop-categories');
+    list.classList.toggle('show');
+  }
+
+  navigateToPage() {
+    this._router.navigate([`${this.selectedLang}`, '/product/product-list']);
   }
 }
