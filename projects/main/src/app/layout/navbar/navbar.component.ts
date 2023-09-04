@@ -17,7 +17,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {}
 
   setDirection() {
-    debugger;
     // const currentLang = this.languageService.getCurrentLanguage();
 
     const selectedLang = this.selectedLang;
@@ -34,7 +33,6 @@ export class NavbarComponent implements OnInit {
   }
 
   changeLang(lang: string) {
-    debugger;
     this.selectedLang = lang;
     this.languageService.changeLanguage(lang);
     this.setDirection();
@@ -53,10 +51,10 @@ export class NavbarComponent implements OnInit {
 
   showList() {
     const list = document.querySelector('.shop-categories');
-    list.classList.toggle('show');
+    list.classList.toggle('');
   }
 
-  navigateToPage() {
-    this._router.navigate([`${this.selectedLang}`, '/product/product-list']);
-  }
+  // navigateToPage() {
+  //   this._router.navigate([`${this.selectedLang}`, '/product/product-list']);
+  // }
 }

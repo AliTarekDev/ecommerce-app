@@ -33,15 +33,15 @@
           <a class="nav-link">{{ "about" | translate }}</a>
         </li>
 
-        <li class="nav-item nav-item-dropdown" (mouseenter)="showList()">
+        <li class="nav-item nav-item-dropdown">
           <a
             class="nav-link"
             [routerLink]="[selectedLang + '/product/product-list']"
           >
             {{ "shop" | translate }}</a
           >
-
-          <ul class="shop-categories shadow show">
+          <!-- 
+          <ul class="shop-categories shadow">
             <li>{{ "bedRoom" | translate }}</li>
             <li>{{ "SofasAndBoards" | translate }}</li>
             <li>{{ "woodenDecorations" | translate }}</li>
@@ -52,7 +52,7 @@
             <li>{{ "kitchens" | translate }}</li>
             <li>{{ "officeFurniture" | translate }}</li>
             <li>{{ "WoodenDoorsAndPanels" | translate }}</li>
-          </ul>
+          </ul> -->
         </li>
         <!-- <li class="nav-item dropdown">
           <a
@@ -112,7 +112,7 @@
         </li>
 
         <li class="top-cart">
-          <a href="javascript:void(0)" (click)="openCart()"
+          <a href="javascript:void(0)" class="cart" (click)="openCart()"
             ><i class="fa fa-shopping-cart" aria-hidden="true"></i> (2)</a
           >
           <div class="cart-drop">

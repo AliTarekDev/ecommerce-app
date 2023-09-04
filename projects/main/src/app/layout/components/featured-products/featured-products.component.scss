@@ -1,4 +1,4 @@
-$mainColor: #d19e66;
+$mainColor: #a00f76;
 
 ::ng-deep .owl-theme .owl-nav [class*="owl-"] {
   background: $mainColor !important;
@@ -21,4 +21,8 @@ $mainColor: #d19e66;
 
 ::ng-deep .owl-carousel .owl-item img {
   height: 300px;
+}
+
+h3 {
+  color: $mainColor;
 }
