@@ -7,10 +7,14 @@ import { catchError, tap, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  apiUrl: string = 'https://marvelhome.com.sa/api/';
+  apiUrl: string = 'https://furniture.marvelhome.com.sa/api/';
   token: string;
 
-  constructor(private http: HttpClient, private _Router: Router, private route: ActivatedRoute) { }
+  constructor(
+    private http: HttpClient,
+    private _Router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   register(userData: any) {
     return this.http.post(`${this.apiUrl}register`, userData);
@@ -25,11 +29,11 @@ export class AuthService {
         const currentURL = this._Router.url;
         const containsArabic = currentURL.includes('ar');
         const containsEnglish = currentURL.includes('en');
-      
+
         if (containsArabic) {
           this._Router.navigate(['/ar/home']);
         }
-      
+
         if (containsEnglish) {
           this._Router.navigate(['/en/home']);
         }
@@ -40,5 +44,5 @@ export class AuthService {
     );
   }
 
-  logout() { }
+  logout() {}
 }

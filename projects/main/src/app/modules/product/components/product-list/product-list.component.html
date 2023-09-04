@@ -292,7 +292,7 @@
               role="tabpanel"
               aria-labelledby="home-tab"
             >
-              <div class="row">
+              <div class="row" *ngIf="products?.length > 0">
                 <div class="col-sm-6 col-xl-4" *ngFor="let product of products">
                   <div class="sin-product style-two">
                     <div class="pro-img">
@@ -300,7 +300,7 @@
                     </div>
                     <div class="mid-wrapper">
                       <h5 class="pro-title">
-                        <a href="product.html">Product</a>
+                        <a href="product.html">{{ product?.name?.ar }}</a>
                       </h5>
                       <div class="color-variation">
                         <ul>
@@ -310,7 +310,7 @@
                           <li><i class="fas fa-circle"></i></li>
                         </ul>
                       </div>
-                      <p>Category / <span>$387</span></p>
+                      <!-- <p>Category / <span>$387</span></p> -->
                     </div>
                     <div class="icon-wrapper">
                       <div class="pro-icon">
@@ -966,8 +966,13 @@
               [hidePageSize]="true"
               (page)="pageChange($event)"
               showFirstLastButtons="true"
+              *ngIf="products.length > 0"
             >
             </mat-paginator>
+
+            <ng-container *ngIf="products.length <= 0">
+              لا يوجد بيانات لعرضها</ng-container
+            >
           </div>
           <!-- /.load-more-wrapper -->
         </div>
