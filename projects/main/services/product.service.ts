@@ -7,7 +7,7 @@ import { Product } from '../src/app/modules/product/interfaces/product.interface
   providedIn: 'root',
 })
 export class ProductService {
-  apiUrl: string = 'https://marvelhome.com.sa/api/services/';
+  apiUrl: string = 'https://furniture.marvelhome.com.sa/api/services/';
   constructor(private http: HttpClient) {}
 
   getProductList(dataObj: any): Observable<any> {
