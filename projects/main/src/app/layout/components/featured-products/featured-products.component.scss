@@ -26,3 +26,10 @@ $mainColor: #a00f76;
 h3 {
   color: $mainColor;
 }
+
+.shop-now {
+  text-transform: capitalize;
+  font-size: 18px;
+  color: $mainColor;
+  cursor: pointer;
+}

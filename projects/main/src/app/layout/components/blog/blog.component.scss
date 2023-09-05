@@ -1,0 +1,11 @@
+$mainColor: #a00f76;
+.blog {
+  padding: 0 20px;
+  &-cont {
+    h2 {
+      color: $mainColor;
+      font-size: 35px;
+      margin-bottom: 30px;
+    }
+  }
+}

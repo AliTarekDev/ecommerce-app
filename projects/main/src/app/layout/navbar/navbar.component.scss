@@ -13,7 +13,7 @@ $mainColor: #a00f76;
     align-items: center;
     width: 30%;
     img {
-      width: 80%;
+      max-width: 320px;
       height: 100%;
     }
   }
@@ -117,4 +117,8 @@ $mainColor: #a00f76;
 }
 i {
   color: $mainColor;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  flex-grow: 0 !important;
 }

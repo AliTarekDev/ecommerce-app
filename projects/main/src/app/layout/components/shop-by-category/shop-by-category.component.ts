@@ -1,27 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import AOS from 'aos';
-
 @Component({
-  selector: 'app-featured-products',
-  templateUrl: './featured-products.component.html',
-  styleUrls: ['./featured-products.component.scss'],
-  // animations: [
-  //   trigger('fadeInOut', [
-  //     transition(':enter', [
-  //       style({ opacity: 0 }),
-  //       animate('300ms', style({ opacity: 1 })),
-  //     ]),
-  //     transition(':leave', [animate('300ms', style({ opacity: 0 }))]),
-  //   ]),
-  // ],
+  selector: 'app-shop-by-category',
+  templateUrl: './shop-by-category.component.html',
+  styleUrls: ['./shop-by-category.component.scss'],
 })
-export class FeaturedProductsComponent implements OnInit {
+export class ShopByCategoryComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
     /*************** animation */
-    AOS.init({});
   }
 
   products = [

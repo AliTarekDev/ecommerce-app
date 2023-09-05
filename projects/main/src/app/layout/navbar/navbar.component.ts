@@ -49,10 +49,10 @@ export class NavbarComponent implements OnInit {
     cartDialog?.classList.toggle('active');
   }
 
-  showList() {
-    const list = document.querySelector('.shop-categories');
-    list.classList.toggle('');
-  }
+  // showList() {
+  //   const list = document.querySelector('.shop-categories');
+  //   list.classList.toggle('');
+  // }
 
   // navigateToPage() {
   //   this._router.navigate([`${this.selectedLang}`, '/product/product-list']);
