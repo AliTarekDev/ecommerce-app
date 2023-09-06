@@ -35,9 +35,9 @@ import { MaterialModule } from '../../material/material.module';
     MaterialModule,
   ],
   exports: [
+    ProductItemComponent,
     TranslateModule,
     SectionTitleComponent,
-    ProductItemComponent,
     FooterComponent,
     NgxSliderModule,
     SocialContactComponent,

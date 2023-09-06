@@ -1,0 +1,29 @@
+$mainColor: #a00f76;
+
+.companyName {
+  p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+  }
+}
+
+.footer-widget {
+  img {
+    width: 80%;
+  }
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+
+  li:hover {
+    a {
+      transition: all 0.5s ease-in;
+      color: $mainColor;
+    }
+  }
+}

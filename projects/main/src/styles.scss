@@ -20,6 +20,7 @@ body {
   // height: 100000px !important;
   font-family: "Work Sans", sans-serif;
 }
+
 .active {
   color: $mainColor;
 }
@@ -2389,9 +2390,10 @@ a.btn-two::after {
   ##  Features
   --------------------------------------------------------------*/
 .feature-area {
-  background: #fff url("./assets/images/bg/1.jpg") no-repeat center;
+  background: #f4f3f1;
   background-size: cover;
   padding: 105px 0;
+  margin-top: 40px;
 }
 
 .sin-feature {
@@ -3726,7 +3728,7 @@ p.sub-title {
 }
 
 .product-review .reviwer img {
-  weight: 110px;
+  // weight: 110px;
   border: 5px solid #fff;
   float: left;
 }
@@ -5450,9 +5452,9 @@ p.sub-title {
 }
 
 .backtotop i {
-  height: 42px;
-  width: 42px;
-  line-height: 42px;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
   font-size: 20px;
   background: #fff;
   margin: 2px;
@@ -7336,4 +7338,19 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.section-heading {
+  h3 {
+    font-size: 35px !important;
+  }
+
+  p {
+    margin-top: 15px;
+  }
+}
+
+.p-style {
+  opacity: 1;
+  transform: translateZ(0);
 }

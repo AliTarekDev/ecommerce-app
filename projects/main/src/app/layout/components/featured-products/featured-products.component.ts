@@ -1,21 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-featured-products',
   templateUrl: './featured-products.component.html',
   styleUrls: ['./featured-products.component.scss'],
+  // animations: [
+  //   trigger('fadeInOut', [
+  //     transition(':enter', [
+  //       style({ opacity: 0 }),
+  //       animate('300ms', style({ opacity: 1 })),
+  //     ]),
+  //     transition(':leave', [animate('300ms', style({ opacity: 0 }))]),
+  //   ]),
+  // ],
 })
-export class FeaturedProductsComponent {
+export class FeaturedProductsComponent implements OnInit {
   constructor() {}
+
+  ngOnInit(): void {
+    /*************** animation */
+    AOS.init({});
+  }
+
   products = [
-    { image: './assets/images/styles/طاولة خدمة1.jpg' },
-    { image: './assets/images/styles/طاولة 3.jpg' },
-    { image: './assets/images/styles/طاولة غرفة.jpg' },
-    { image: './assets/images/styles/طاولة طعام حميد.jpg' },
-    { image: './assets/images/styles/طاولة طعام الزيني.jpg' },
-    { image: './assets/images/styles/طاولة طعام 1.jpg' },
-    { image: './assets/images/styles/غرفة زيتي 2.jpg' },
+    { image: './assets/images/home/1.jpeg' },
+    { image: './assets/images/home/8.jpeg' },
+    { image: './assets/images/home/3.jpeg' },
+    { image: './assets/images/home/4.jpeg' },
+    { image: './assets/images/home/5.jpeg' },
+    { image: './assets/images/home/6.jpeg' },
+    { image: './assets/images/home/7.jpeg' },
   ];
   customOptions: OwlOptions = {
     loop: true,

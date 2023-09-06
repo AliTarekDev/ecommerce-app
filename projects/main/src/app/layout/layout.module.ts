@@ -12,6 +12,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FeatureAreaComponent } from './feature-area/feature-area.component';
 import { TrendingComponent } from './components/trending/trending.component';
 import { ProductBannerComponent } from './product-banner/product-banner.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { ShopByCategoryComponent } from './components/shop-by-category/shop-by-category.component';
+import { ImagePreviewComponent } from './components/image-preview/image-preview.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { ProductBannerComponent } from './product-banner/product-banner.componen
     FeatureAreaComponent,
     TrendingComponent,
     ProductBannerComponent,
+    BlogComponent,
+    ShopByCategoryComponent,
+    ImagePreviewComponent,
   ],
   imports: [CommonModule, LayoutRoutingModule, SharedModule, CarouselModule],
 })

@@ -1,9 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">
-      <img src="./assets/images/logo.jpeg" draggable="false" />
-    </a>
-
     <button
       class="navbar-toggler"
       type="button"
@@ -30,7 +26,9 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link">{{ "about" | translate }}</a>
+          <a class="nav-link" style="cursor: pointer">{{
+            "about" | translate
+          }}</a>
         </li>
 
         <li class="nav-item nav-item-dropdown">
@@ -40,38 +38,7 @@
           >
             {{ "shop" | translate }}</a
           >
-          <!-- 
-          <ul class="shop-categories shadow">
-            <li>{{ "bedRoom" | translate }}</li>
-            <li>{{ "SofasAndBoards" | translate }}</li>
-            <li>{{ "woodenDecorations" | translate }}</li>
-            <li>{{ "tVOffices" | translate }}</li>
-            <li>{{ "chairsAndTables" | translate }}</li>
-            <li>{{ "curtains" | translate }}</li>
-            <li>{{ "mattresses" | translate }}</li>
-            <li>{{ "kitchens" | translate }}</li>
-            <li>{{ "officeFurniture" | translate }}</li>
-            <li>{{ "WoodenDoorsAndPanels" | translate }}</li>
-          </ul> -->
         </li>
-        <!-- <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            id="navbarDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
 
         <li class="nav-item">
           <a class="nav-link" [routerLink]="[selectedLang + '/contact']">
@@ -80,7 +47,9 @@
         </li>
       </ul>
     </div>
-
+    <a class="navbar-brand" routerLink="/">
+      <img src="./assets/images/logo.jpeg" draggable="false" />
+    </a>
     <div
       class="header-right-one"
       [ngClass]="
@@ -100,7 +69,7 @@
               [selected]="languageService.getCurrentLanguage() == 'ar'"
               value="ar"
             >
-              ar
+              ع ر
             </option>
           </select>
         </li>

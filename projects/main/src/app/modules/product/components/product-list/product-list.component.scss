@@ -1,4 +1,4 @@
-$mainColor: #d19e66;
+$mainColor: #a00f76;
 
 ::ng-deep .ngx-slider .ngx-slider-bar {
   border: 0px solid #c5c5c5;
@@ -10,8 +10,8 @@ $mainColor: #d19e66;
 }
 
 ::ng-deep .ngx-slider .ngx-slider-pointer {
-  border: 2px solid #b35f03;
-  background: #b35f03 !important;
+  border: 2px solid $mainColor;
+  background: $mainColor !important;
   font-weight: normal;
   color: #121212 !important;
   border-radius: 50px;
@@ -24,7 +24,7 @@ $mainColor: #d19e66;
 }
 
 ::ng-deep .ngx-slider.animate .ngx-slider-selection {
-  background: #b35f03 !important;
+  background: $mainColor !important;
 }
 
 .sidebar-search {
@@ -45,16 +45,16 @@ $mainColor: #d19e66;
 }
 
 .advertise-img {
-  height: 519px;
+  height: 400px;
   img {
     width: 100%;
-    height: 519px;
+    height: 100%;
   }
 }
 
 .pro-img {
   img {
-    height: 545px;
+    height: 300px;
   }
 }
 
