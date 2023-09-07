@@ -26,7 +26,7 @@ const routes: Routes = [
 
       {
         path: ':lang/product',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
         loadChildren: () =>
           import('./modules/product/product.module').then(
             (m) => m.ProductModule
@@ -38,6 +38,11 @@ const routes: Routes = [
           import('./modules/contact/contact.module').then(
             (m) => m.ContactModule
           ),
+      },
+      {
+        path: ':lang/about',
+        loadChildren: () =>
+          import('./modules/about/about.module').then((m) => m.AboutModule),
       },
     ],
   },

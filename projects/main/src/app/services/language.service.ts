@@ -32,6 +32,7 @@ export class LanguageService {
     debugger;
     const urlLang = window.location.pathname.split('/')[1];
     const supportedLanguages = ['en', 'ar'];
+
     return supportedLanguages.includes(urlLang) ? urlLang : '';
   }
 

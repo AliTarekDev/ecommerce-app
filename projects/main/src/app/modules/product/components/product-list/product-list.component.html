@@ -40,7 +40,9 @@
             </button>
           </div>
           <div class="sidebar-widget category-widget">
-            <h6>PRODUCT CATEGORIES</h6>
+            <h6 style="text-transform: uppercase">
+              {{ "productCategories" | translate }}
+            </h6>
             <ul>
               <li>
                 <a href="#">{{ "bedRoom" | translate }} </a> <span>(19)</span>
@@ -84,7 +86,9 @@
           </div>
 
           <div class="sidebar-widget range-widget">
-            <h6>SEARCH BY PRICE</h6>
+            <h6 style="text-transform: uppercase">
+              {{ "searchPrice" | translate }}
+            </h6>
             <div class="price-range">
               <div id="slider-range"></div>
               <ngx-slider
@@ -96,7 +100,7 @@
             </div>
           </div>
 
-          <div class="sidebar-widget color-widget">
+          <!-- <div class="sidebar-widget color-widget">
             <h6>PRODUCT COLOR</h6>
             <ul>
               <li><a href="#"></a></li>
@@ -105,18 +109,20 @@
               <li><a href="#"></a></li>
               <li><a href="#"></a></li>
             </ul>
-          </div>
+          </div> -->
 
           <div class="sidebar-widget product-widget">
-            <h6>BEST SELLERS</h6>
+            <h6>{{ "BestSeller" | translate }}</h6>
             <div class="wid-pro">
               <div class="sp-img">
                 <img src="./assets/images/home/1.jpeg" alt="" />
               </div>
               <div class="small-pro-details">
-                <h5 class="title"><a href="#">Contrasting </a></h5>
-                <span>$60</span>
-                <span class="pre-price">$80</span>
+                <h5 class="title">
+                  <a href="#">{{ "Contrasting" | translate }} </a>
+                </h5>
+                <!-- <span>$60</span> -->
+                <!-- <span class="pre-price">$80</span> -->
                 <div class="rating">
                   <ul>
                     <li>
@@ -144,9 +150,11 @@
                 <img src="./assets/images/home/2.jpeg" alt="" />
               </div>
               <div class="small-pro-details">
-                <h5 class="title"><a href="#">Contrasting</a></h5>
-                <span>$60</span>
-                <span class="pre-price">$80</span>
+                <h5 class="title">
+                  <a href="#">{{ "Contrasting" | translate }}</a>
+                </h5>
+                <!-- <span>$60</span> -->
+                <!-- <span class="pre-price">$80</span> -->
                 <div class="rating">
                   <ul>
                     <li>
@@ -174,9 +182,11 @@
                 <img src="./assets/images/home/8.jpeg" alt="" />
               </div>
               <div class="small-pro-details">
-                <h5 class="title"><a href="#">Contrasting </a></h5>
-                <span>$60</span>
-                <span class="pre-price">$80</span>
+                <h5 class="title">
+                  <a href="#">{{ "Contrasting" | translate }} </a>
+                </h5>
+                <!-- <span>$60</span> -->
+                <!-- <span class="pre-price">$80</span> -->
                 <div class="rating">
                   <ul>
                     <li>
@@ -204,9 +214,11 @@
                 <img src="./assets/images/home/12.jpeg" alt="" />
               </div>
               <div class="small-pro-details">
-                <h5 class="title"><a href="#">Contrasting </a></h5>
-                <span>$60</span>
-                <span class="pre-price">$80</span>
+                <h5 class="title">
+                  <a href="#">{{ "Contrasting" | translate }} </a>
+                </h5>
+                <!-- <span>$60</span>
+                <span class="pre-price">$80</span> -->
                 <div class="rating">
                   <ul>
                     <li>
@@ -381,7 +393,7 @@
                           <h5 class="pro-title">
                             <a href="#">Laaptop carry bag</a>
                           </h5>
-                          <span>$387</span>
+                          <!-- <span>$387</span> -->
                           <div class="rating">
                             <ul>
                               <li>
@@ -418,7 +430,11 @@
                             dolore eu olestie consequat feugiat nulla facilisis
                             at vero eros.
                           </p>
-                          <a class="btn-two" href="#">Add to cart</a>
+                          <a
+                            class="btn-two"
+                            style="text-transform: capitalize"
+                            >{{ "addCart" | translate }}</a
+                          >
                         </div>
                       </div>
                     </div>
@@ -456,7 +472,7 @@
                           <h5 class="pro-title">
                             <a href="product.html">Laptop carry bag</a>
                           </h5>
-                          <span>$387</span>
+                          <!-- <span>$387</span> -->
                           <div class="rating">
                             <ul>
                               <li>
@@ -530,7 +546,7 @@
                           <h5 class="pro-title">
                             <a href="product.html">Laptop carry bag</a>
                           </h5>
-                          <span>$387</span>
+                          <!-- <span>$387</span> -->
                           <div class="rating">
                             <ul>
                               <li>
@@ -604,7 +620,7 @@
                           <h5 class="pro-title">
                             <a href="product.html">Laptop carry bag</a>
                           </h5>
-                          <span>$387</span>
+                          <!-- <span>$387</span> -->
                           <div class="rating">
                             <ul>
                               <li>
