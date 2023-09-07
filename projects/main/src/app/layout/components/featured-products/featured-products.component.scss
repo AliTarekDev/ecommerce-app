@@ -1,21 +1,25 @@
 $mainColor: #a00f76;
 
 ::ng-deep .owl-theme .owl-nav [class*="owl-"] {
-  background: $mainColor !important;
+  // background: $mainColor !important;
+  background-color: transparent;
+  color: $mainColor;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   transition: all 0.5s ease-in-out;
   &:hover {
     opacity: 0.8;
+    background-color: transparent !important;
   }
 
   i {
+    color: $mainColor !important;
     display: flex;
     height: 100%;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    font-size: 30px;
   }
 }
 

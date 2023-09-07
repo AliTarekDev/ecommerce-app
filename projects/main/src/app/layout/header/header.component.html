@@ -40,7 +40,8 @@
 
         <div class="carousel-item-data">
           <h1 [@fadeInOut]>
-            Last 3 days of <span class="header-subtitle">Summer Sale</span>
+            {{ "Last3daysof" | translate }}
+            <span class="header-subtitle">{{ "summerSale" | translate }}</span>
           </h1>
           <div class="load-more-wrapper">
             <a href="create-account.html" class="btn-two">{{
@@ -63,7 +64,10 @@
         />
 
         <div class="carousel-item-data">
-          <h1>summer <span class="header-subtitle">collections</span></h1>
+          <h1>
+            {{ "summer" | translate }}
+            <span class="header-subtitle">{{ "collections" | translate }}</span>
+          </h1>
           <div class="load-more-wrapper">
             <a href="create-account.html" class="btn-two">{{
               "shopNow" | translate

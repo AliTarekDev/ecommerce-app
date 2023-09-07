@@ -7,14 +7,14 @@ import { Product } from '../src/app/modules/product/interfaces/product.interface
   providedIn: 'root',
 })
 export class ProductService {
-  apiUrl: string = 'https://furniture.marvelhome.com.sa/api/services/';
+  apiUrl: string = 'https://furniture.marvelhome.com.sa/api/';
   constructor(private http: HttpClient) {}
 
   getProductList(dataObj: any): Observable<any> {
     let params = new HttpParams();
     params = params.append('page_size', dataObj.pageSize);
     params = params.append('page_number', dataObj.pageNumber);
-    return this.http.get<any>(`${this.apiUrl}products`, { params }).pipe(
+    return this.http.get<any>(`${this.apiUrl}get-products`, { params }).pipe(
       tap((res) => {
         console.log(res);
       })

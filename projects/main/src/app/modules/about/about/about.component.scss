@@ -1,0 +1,22 @@
+$mainColor: #a00f76;
+
+.about-content {
+  width: 100%;
+  max-width: 100% !important;
+  padding-top: 60px;
+  padding-right: 40px;
+  padding-bottom: 60px;
+  padding-left: 50px;
+  text-align: right;
+  span {
+    display: block;
+    margin-bottom: 5px;
+    color: $mainColor;
+    font-size: 18px;
+    font-family: din, din;
+  }
+  p {
+    line-height: 1.8;
+    font-size: 18px;
+  }
+}

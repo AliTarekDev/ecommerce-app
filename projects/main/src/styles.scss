@@ -19,6 +19,7 @@ body::-webkit-scrollbar-thumb {
 body {
   // height: 100000px !important;
   font-family: "Work Sans", sans-serif;
+  overflow-x: hidden;
 }
 
 .active {
@@ -1504,7 +1505,7 @@ a.btn-one:hover {
 }
 
 .slider-wrapper .owl-theme .owl-dots .owl-dot.active span {
-  background: $mainColor;
+  // background: $mainColor;
   width: 10px;
   height: 32px;
 }
