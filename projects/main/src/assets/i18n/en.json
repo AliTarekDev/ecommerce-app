@@ -28,8 +28,8 @@
   "Last3daysof": "Last 3 days of",
   "summerSale": "summer sale",
   "summerCollections": "SUMMER COLLECTIONS",
-  "collections": "مجموعات",
-  "summer": "الصيف",
+  "collections": "collections",
+  "summer": "summer",
   "h1": " Experience the epitome of luxury with our best-selling luxury furniture – where comfort meets comfort With sophistication.",
   "Distinctivegroup": "Distinctive group",
   "h2": "We have truly elegant and exquisite collections that will add a distinctive and eye-catching touch",
@@ -44,5 +44,13 @@
   "searchPrice": "search by price",
   "BestSeller": "Best Sellers",
   "Contrasting": "Contrasting",
-  "addCart": "add to cart"
+  "addCart": "add to cart",
+  "freeShipping": "FREE SHIPPING",
+  "freeShippingAllOrder": "Free shipping on all order",
+  "onlineSupport": "ONLINE SUPPORT",
+  "supportHours": "Online support 24 hours",
+  "moneyReturn": "MONEY RETURN",
+  "backGuarantee": "Back guarantee under 5 days",
+  "memberDiscount": "MEMBER DISCOUNT",
+  "onEveryOrder": "Onevery order over ..."
 }

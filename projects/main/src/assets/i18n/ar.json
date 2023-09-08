@@ -43,5 +43,13 @@
   "searchPrice": "ابحث بالسعر",
   "BestSeller": "الاكثر مبيعا",
   "Contrasting": "المتناقضة",
-  "addCart": "اضافة الي السلة"
+  "addCart": "اضافة الي السلة",
+  "freeShipping": "الشحن مجانا",
+  "freeShippingAllOrder": "شحن مجاني لجميع الطلبات",
+  "onlineSupport": "الدعم عبر الانترنت",
+  "supportHours": "الدعم عبر الانترنت 24 ساعة",
+  "moneyReturn": "عودة الاموال",
+  "backGuarantee": "ضمان العودة في أقل من 5 أيام",
+  "memberDiscount": "خصم الاعضاء",
+  "onEveryOrder": "طلب واحد أكثر من  ..."
 }
