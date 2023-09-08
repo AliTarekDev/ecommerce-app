@@ -87,10 +87,13 @@
           <a href="javascript:void(0)" class="cart" (click)="openCart()"
             ><i class="fa fa-shopping-cart" aria-hidden="true"></i> (2)</a
           >
-          <div class="cart-drop">
+          <div
+            class="cart-drop"
+            [ngStyle]="{ right: translate.currentLang == 'ar' ? '-220px' : '' }"
+          >
             <div class="single-cart">
               <div class="cart-img">
-                <img alt="" src="./assets/images/product/car1.jpg" />
+                <img alt="" src="./assets/images/featured/2.jpg" />
               </div>
               <div class="cart-title">
                 <p><a href="">Aliquam Consequat</a></p>
@@ -102,7 +105,7 @@
             </div>
             <div class="single-cart">
               <div class="cart-img">
-                <img alt="" src="./assets/images/product/car2.jpg" />
+                <img alt="" src="./assets/images/featured/3.jpg" />
               </div>
               <div class="cart-title">
                 <p><a href="">Quisque In Arcuc</a></p>
@@ -126,19 +129,19 @@
                 <p>Total <span>$244.00</span></p>
               </div>
               <div class="cart-checkout">
-                <a href="cart.html"
-                  ><i class="fa fa-shopping-cart"></i>View Cart</a
+                <a routerLink="cart"
+                  ><i class="fa fa-shopping-cart"></i> View Cart</a
                 >
               </div>
               <div class="cart-share">
-                <a href="#"><i class="fa fa-share"></i>Checkout</a>
+                <a href="#"><i class="fa fa-share ml-2"></i> Checkout</a>
               </div>
             </div>
           </div>
         </li>
         <li class="top-search">
           <a href="javascript:void(0)"
-            ><i class="fa fa-search" aria-hidden="true"></i>
+            ><i class="fa fa-search ml-2" aria-hidden="true"></i>
           </a>
           <input type="text" class="search-input" placeholder="Search" />
         </li>
