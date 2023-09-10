@@ -43,10 +43,6 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  goToDetailsPage(product: any) {
-    this._router.navigate([`/en/product/product-details/${product.id}`]);
-  }
-
   /*** Pagination */
   pageChange(e: any) {
     console.log(e, 'Event');

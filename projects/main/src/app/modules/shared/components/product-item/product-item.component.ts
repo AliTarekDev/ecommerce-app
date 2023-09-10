@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
@@ -8,6 +10,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class ProductItemComponent {
   @Input() product: any;
+
+  constructor(private _router: Router, public translate: TranslateService) {}
 
   customOptions: OwlOptions = {
     loop: true,
@@ -33,4 +37,10 @@ export class ProductItemComponent {
     },
     nav: true,
   };
+
+  goToDetailsPage(product: any) {
+    this._router.navigate([
+      `/${this.translate.currentLang}/product/product-details/${product.id}`,
+    ]);
+  }
 }

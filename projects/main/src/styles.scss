@@ -18,8 +18,10 @@ body::-webkit-scrollbar-thumb {
 }
 body {
   // height: 100000px !important;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Noto Sans Arabic", sans-serif !important;
+  font-family: "Pompiere", cursive !important;
   overflow-x: hidden;
+  background: #f4f3f1;
 }
 
 .active {

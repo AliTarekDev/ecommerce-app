@@ -52,5 +52,23 @@
   "moneyReturn": "MONEY RETURN",
   "backGuarantee": "Back guarantee under 5 days",
   "memberDiscount": "MEMBER DISCOUNT",
-  "onEveryOrder": "Onevery order over ..."
+  "onEveryOrder": "Onevery order over ...",
+  "repeatedQuestion": "Frequently asked questions",
+  "termsAndConditions": "Terms and conditions",
+  "ReturnAndExchange": "Return and exchange",
+  "shipping": "Shipping",
+  "Locations": "Locations",
+  "designStudio": "Design studio",
+  "creatorsCircle": "Creators Circle",
+  "projects": "Projects",
+  "Careers": "Careers",
+  "Journals": "Journals",
+  "callUs": "Call Us",
+  "sittingRoom": "sitting room",
+  "diningRoom": "dining room",
+  "accesories": "accesories",
+  "looksGuide": "Looks guide",
+  "liquidation": "Liquidation",
+
+  "IndustrialProductionForcesCompany": "Industrial Production Forces Company"
 }

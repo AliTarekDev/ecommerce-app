@@ -1,5 +1,7 @@
 $mainColor: #a00f76;
-
+.footer-widget-area {
+  background-color: #232323 !important;
+}
 .companyName {
   p {
     width: 100%;
@@ -14,6 +16,12 @@ $mainColor: #a00f76;
   img {
     width: 80%;
   }
+
+  .footer-menu {
+    li a {
+      font-size: 22px;
+    }
+  }
 }
 
 .social {
@@ -24,6 +32,20 @@ $mainColor: #a00f76;
     a {
       transition: all 0.5s ease-in;
       color: $mainColor;
+    }
+  }
+}
+small {
+  color: #fff;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.info {
+  gap: 20px;
+  li {
+    a {
+      color: #fff;
     }
   }
 }
