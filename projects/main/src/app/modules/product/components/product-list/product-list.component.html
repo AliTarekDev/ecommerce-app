@@ -44,43 +44,28 @@
               {{ "productCategories" | translate }}
             </h6>
             <ul>
-              <li>
-                <a href="#">{{ "bedRoom" | translate }} </a> <span>(19)</span>
-              </li>
-              <li>
-                <a href="#">{{ "SofasAndBoards" | translate }} </a>
-                <span>(15)</span>
-              </li>
-              <li>
-                <a href="#">{{ "woodenDecorations" | translate }} </a>
-                <span>(59)</span>
-              </li>
-              <li>
-                <a href="#">{{ "tVOffices" | translate }} </a> <span>(29)</span>
-              </li>
-              <li>
-                <a href="#">{{ "chairsAndTables" | translate }}</a>
-                <span>(56)</span>
-              </li>
-              <li>
-                <a href="#">{{ "curtains" | translate }}</a> <span>(48)</span>
-              </li>
-              <li>
-                <a href="#">{{ "mattresses" | translate }}</a> <span>(11)</span>
-              </li>
-              <li>
-                <a href="#">{{ "kitchens" | translate }}</a> <span>(11)</span>
-              </li>
-              <li>
-                <a href="#">{{ "mattresses" | translate }}</a> <span>(11)</span>
-              </li>
-              <li>
-                <a href="#">{{ "officeFurniture" | translate }}</a>
-                <span>(11)</span>
-              </li>
-              <li>
-                <a href="#">{{ "WoodenDoorsAndPanels" | translate }}</a>
-                <span>(11)</span>
+              <li
+                *ngFor="let category of categories"
+                class="category-list-item"
+                style="padding-bottom: 0"
+              >
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <a *ngIf="translate.currentLang == 'ar'">{{
+                      category.name["ar"]
+                    }}</a>
+                    <a
+                      *ngIf="translate.currentLang == 'en'"
+                      style="text-transform: capitalize"
+                      >{{ category.name["en"] }}</a
+                    >
+                  </div>
+                  <div>
+                    <mat-checkbox
+                      (change)="filterByCategory(category)"
+                    ></mat-checkbox>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
