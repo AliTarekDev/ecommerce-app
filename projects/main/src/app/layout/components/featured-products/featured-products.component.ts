@@ -25,13 +25,13 @@ export class FeaturedProductsComponent implements OnInit {
   }
 
   products = [
-    { image: './assets/images/home/1.jpeg' },
-    { image: './assets/images/home/8.jpeg' },
-    { image: './assets/images/home/3.jpeg' },
-    { image: './assets/images/home/4.jpeg' },
-    { image: './assets/images/home/5.jpeg' },
-    { image: './assets/images/home/6.jpeg' },
-    { image: './assets/images/home/7.jpeg' },
+    { image_url: './assets/images/home/1.jpeg' },
+    { image_url: './assets/images/home/8.jpeg' },
+    { image_url: './assets/images/home/3.jpeg' },
+    { image_url: './assets/images/home/4.jpeg' },
+    { image_url: './assets/images/home/5.jpeg' },
+    { image_url: './assets/images/home/6.jpeg' },
+    { image_url: './assets/images/home/7.jpeg' },
   ];
   customOptions: OwlOptions = {
     loop: true,

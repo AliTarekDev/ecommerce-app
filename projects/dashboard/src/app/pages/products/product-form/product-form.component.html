@@ -1,0 +1,267 @@
+<p-toast></p-toast>
+
+<div class="admin-page">
+  <p-card
+    [header]="editmode ? 'Edit Product' : 'Add Product'"
+    subheader="Add or Edit Product"
+  >
+    <div class="p-grid mb-5">
+      <div class="p-col-12">
+        <p-toolbar>
+          <div class="p-toolbar-group-left"></div>
+          <div class="p-toolbar-group-right">
+            <p-button
+              [label]="editmode ? 'Update' : 'Create'"
+              icon="pi pi-plus"
+              styleClass="p-button-primary mr"
+              (click)="onSubmit()"
+            >
+            </p-button>
+
+            <p-button
+              label="Cancle"
+              icon="pi pi-arrow-circle-left"
+              styleClass="p-button-secondary"
+              routerLink="form"
+              (onClick)="goBack()"
+            >
+            </p-button>
+          </div>
+        </p-toolbar>
+      </div>
+    </div>
+    <!--./p-grid-->
+
+    <div class="grid">
+      <div class="col-12">
+        <form [formGroup]="form">
+          <div class="card">
+            <div class="formgrid grid">
+              <div class="field col">
+                <label for="name">Arabic Name</label>
+                <input
+                  id="name"
+                  type="text"
+                  formControlName="ar_name"
+                  class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                />
+                <ng-container *ngIf="form.controls['ar_name'].touched">
+                  <small
+                    class="p-error"
+                    *ngIf="form.controls['ar_name'].errors?.['required']"
+                    >ar_name is Required</small
+                  >
+                </ng-container>
+              </div>
+
+              <div class="field col">
+                <label for="name">English Name</label>
+                <input
+                  id="name"
+                  type="text"
+                  formControlName="en_name"
+                  class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                />
+                <ng-container *ngIf="form.controls['en_name']?.touched">
+                  <small
+                    class="p-error"
+                    *ngIf="form.controls['en_name'].errors?.['required']"
+                    >en_name is Required</small
+                  >
+                </ng-container>
+              </div>
+              <div class="field col">
+                <label for="brand">Arabic Brand</label>
+                <input
+                  id="brand"
+                  type="text"
+                  formControlName="ar_brand"
+                  class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                />
+
+                <ng-container *ngIf="form.controls['ar_brand']?.touched">
+                  <small
+                    class="p-error"
+                    *ngIf="form.controls['ar_brand'].errors?.['required']"
+                    >brand is Required</small
+                  >
+                </ng-container>
+              </div>
+
+              <div class="field col">
+                <label for="brand">English Brand</label>
+                <input
+                  id="brand"
+                  type="text"
+                  formControlName="en_brand"
+                  class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                />
+
+                <ng-container *ngIf="form.controls['en_brand']?.touched">
+                  <small
+                    class="p-error"
+                    *ngIf="form.controls['en_brand'].errors?.['required']"
+                    >brand is Required</small
+                  >
+                </ng-container>
+              </div>
+
+              <div class="field col">
+                <label for="price">Price</label><br />
+                <p-inputNumber
+                  formControlName="price"
+                  nputId="price"
+                  mode="decimal"
+                  [minFractionDigits]="2"
+                  [maxFractionDigits]="5"
+                >
+                </p-inputNumber>
+                <ng-container *ngIf="form.controls['price'].touched">
+                  <small
+                    class="p-error"
+                    *ngIf="form.controls['price'].errors?.['required']"
+                    >price is Required</small
+                  >
+                </ng-container>
+              </div>
+            </div>
+            <!--./grid-->
+          </div>
+          <div class="p-fluid formgrid grid">
+            <div class="field col-4">
+              <label for="price">quantity</label><br />
+              <p-inputNumber
+                formControlName="quantity"
+                nputId="quantity"
+                mode="decimal"
+                [minFractionDigits]="2"
+                [maxFractionDigits]="5"
+              >
+              </p-inputNumber>
+              <ng-container *ngIf="form.controls['quantity'].touched">
+                <small
+                  class="p-error"
+                  *ngIf="form.controls['quantity'].errors?.['required']"
+                  >Quantity is Required</small
+                >
+              </ng-container>
+            </div>
+
+            <div class="field col-4">
+              <label for="price">discount</label><br />
+              <p-inputNumber
+                formControlName="discount"
+                nputId="discount"
+                mode="decimal"
+                [minFractionDigits]="2"
+                [maxFractionDigits]="5"
+              >
+              </p-inputNumber>
+              <ng-container *ngIf="form.controls['discount'].touched">
+                <small
+                  class="p-error"
+                  *ngIf="form.controls['discount'].errors?.['required']"
+                  >discount is Required</small
+                >
+              </ng-container>
+            </div>
+
+            <div class="field col-4">
+              <label for="price">Category</label><br />
+              <p-dropdown
+                [options]="categories"
+                formControlName="category_id"
+                [filter]="true"
+                filterBy="name.ar"
+                optionLabel="name.ar"
+                [optionValue]="'id'"
+                [showClear]="true"
+                placeholder="Select a Category"
+              ></p-dropdown>
+
+              <ng-container *ngIf="form.controls['category_id'].touched">
+                <small
+                  class="p-error"
+                  *ngIf="form.controls['category_id'].errors?.['required']"
+                  >category is Required</small
+                >
+              </ng-container>
+            </div>
+
+            <div class="field col-4">
+              <label for="isFeatured">is Featured</label><br />
+
+              <p-inputSwitch formControlName="featured"></p-inputSwitch>
+            </div>
+
+            <div class="field col-12">
+              <label for="price">Arabic Description</label><br />
+              <textarea
+                [rows]="7"
+                [cols]="30"
+                pInputTextarea
+                formControlName="ar_description"
+              ></textarea>
+
+              <ng-container *ngIf="form.controls['ar_description'].touched">
+                <small
+                  class="p-error"
+                  *ngIf="form.controls['ar_description'].errors?.['required']"
+                  >description is Required</small
+                >
+              </ng-container>
+            </div>
+
+            <div class="field col-12">
+              <label for="price">English Description</label><br />
+              <textarea
+                [rows]="7"
+                [cols]="30"
+                pInputTextarea
+                formControlName="en_description"
+              ></textarea>
+
+              <ng-container *ngIf="form.controls['en_description'].touched">
+                <small
+                  class="p-error"
+                  *ngIf="form.controls['en_description'].errors?.['required']"
+                  >description is Required</small
+                >
+              </ng-container>
+            </div>
+
+            <!-- <div class="field col-12">
+              <label for="price">Product Details</label><br />
+              <p-editor
+                formControlName="richDescription"
+                [style]="{ height: '320px' }"
+              ></p-editor>
+            </div> -->
+
+            <div class="field col-12">
+              <label for="image">Main image</label>
+              <input
+                type="file"
+                class="p-inputtext"
+                accept="image/*"
+                (change)="onImageUpload($event)"
+              />
+              <ng-container *ngIf="form.controls['image'].errors">
+                <small
+                  class="p-error"
+                  *ngIf="form.controls['image'].errors?.['required']"
+                  >image is Required</small
+                >
+              </ng-container>
+              <div class="col-2 mt-2 pl-0">
+                <img style="width: 100%" [src]="imageDisplay" />
+              </div>
+            </div>
+          </div>
+          <!--./grid-->
+        </form>
+      </div>
+    </div>
+    <!--./p-grid-->
+  </p-card>
+</div>

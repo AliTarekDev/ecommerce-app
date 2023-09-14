@@ -68,3 +68,23 @@ $mainColor: #a00f76;
 //   background-color: $mainColor;
 //   margin: 0px 10px;
 // }
+
+.category-list-item {
+  &::after {
+    bottom: 16px !important;
+  }
+}
+
+::ng-deep
+  .mdc-checkbox
+  .mdc-checkbox__native-control:enabled:checked
+  ~ .mdc-checkbox__background,
+.mdc-checkbox
+  .mdc-checkbox__native-control:enabled:indeterminate
+  ~ .mdc-checkbox__background,
+.mdc-checkbox
+  .mdc-checkbox__native-control[data-indeterminate="true"]:enabled
+  ~ .mdc-checkbox__background {
+  background-color: $mainColor !important;
+  border-color: $mainColor !important;
+}

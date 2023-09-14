@@ -23,6 +23,15 @@ export class ShopByCategoryComponent implements OnInit {
     { imageUrl: './assets/images/parteners/11.jpeg' },
     { imageUrl: './assets/images/parteners/12.jpeg' },
     { imageUrl: './assets/images/parteners/13.jpeg' },
+    { imageUrl: './assets/images/parteners/14.jpeg' },
+    { imageUrl: './assets/images/parteners/15.jpeg' },
+    { imageUrl: './assets/images/parteners/16.jpeg' },
+    { imageUrl: './assets/images/parteners/17.jpeg' },
+    { imageUrl: './assets/images/parteners/18.jpeg' },
+    { imageUrl: './assets/images/parteners/19.jpeg' },
+    { imageUrl: './assets/images/parteners/20.jpeg' },
+    { imageUrl: './assets/images/parteners/21.jpeg' },
+    { imageUrl: './assets/images/parteners/22.jpeg' },
   ];
   ngOnInit(): void {
     /*************** animation */

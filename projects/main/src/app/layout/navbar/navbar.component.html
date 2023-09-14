@@ -44,6 +44,15 @@
         </li>
 
         <li class="nav-item">
+          <a
+            class="nav-link"
+            style="cursor: pointer"
+            (click)="downloadMarvelPdf()"
+            >{{ "profileMarvel" | translate }}</a
+          >
+        </li>
+
+        <li class="nav-item">
           <a class="nav-link" [routerLink]="[selectedLang + '/contact']">
             {{ "contactUs" | translate }}</a
           >

@@ -15,6 +15,8 @@ import { ProductBannerComponent } from './product-banner/product-banner.componen
 import { BlogComponent } from './components/blog/blog.component';
 import { ShopByCategoryComponent } from './components/shop-by-category/shop-by-category.component';
 import { ImagePreviewComponent } from './components/image-preview/image-preview.component';
+import { LayoutAboutComponent } from './components/layout-about/layout-about.component';
+import { VideoPlayerComponent } from './components/video-player/video-player.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ImagePreviewComponent } from './components/image-preview/image-preview.
     BlogComponent,
     ShopByCategoryComponent,
     ImagePreviewComponent,
+    LayoutAboutComponent,
+    VideoPlayerComponent,
   ],
   imports: [CommonModule, LayoutRoutingModule, SharedModule, CarouselModule],
 })

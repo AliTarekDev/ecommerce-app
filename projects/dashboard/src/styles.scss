@@ -1,1 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
+//Base
+
+$primary-color: #ff3a00;
+$primary-color-dark: #af2900;
+$mainColor: #a00f76;
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+//
+
+@import "~normalize.css/normalize.css";
+
+@import "~primeng/resources/themes/saga-blue/theme.css";
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/primeng.min.css";
+@import "/node_modules/primeflex/primeflex.css";
+// @import "./app/styles/base/configuration.scss";
+body,
+.p-component {
+  font-family: "Open Sans", "sans-serif";
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  @include reset-list;
+}
+//pages
+
+//Shared
+
+.admin {
+  &-wrapper {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  &-main {
+    width: calc(100% - 175px);
+    margin-left: 175px;
+  }
+
+  &-sidebar {
+    position: fixed;
+    width: 175px;
+    background-color: black;
+    height: 100%;
+    top: 0;
+  }
+
+  &-page {
+    padding: 15px;
+  }
+}
+
+.logo {
+  padding: 20px;
+  width: 100%;
+}
+img {
+  max-width: 100%;
+}
+
+.links {
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: block;
+      list-style: none;
+      width: 100%;
+
+      a {
+        color: #fff;
+        padding: 10px 15px;
+        display: block;
+        width: 100%;
+
+        &:hover {
+          background-color: $mainColor;
+          color: #fff;
+        }
+
+        i {
+          margin-right: 8px;
+          margin-top: 0;
+          float: left;
+        }
+      }
+
+      .logout {
+        color: $mainColor;
+      }
+    }
+  }
+}
+
+.mr {
+  margin-right: 20px;
+}
+
+tr {
+  img {
+    width: 80px;
+  }
+}

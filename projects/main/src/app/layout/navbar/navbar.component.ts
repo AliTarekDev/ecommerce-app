@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  public name = './assets/company_profile.pdf';
   constructor(
     public languageService: LanguageService,
     @Inject(DOCUMENT) private document: Document,
@@ -78,12 +79,7 @@ export class NavbarComponent implements OnInit {
     cartDialog?.classList.toggle('active');
   }
 
-  // showList() {
-  //   const list = document.querySelector('.shop-categories');
-  //   list.classList.toggle('');
-  // }
-
-  // navigateToPage() {
-  //   this._router.navigate([`${this.selectedLang}`, '/product/product-list']);
-  // }
+  downloadMarvelPdf() {
+    window.open('./assets/company_profile.pdf', '_blank');
+  }
 }
