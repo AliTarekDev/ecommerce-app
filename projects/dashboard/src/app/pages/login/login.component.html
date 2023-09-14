@@ -1,0 +1,53 @@
+<section class="contact-area">
+  <div class="container-fluid custom-container">
+    <div class="section-heading pb-30">
+      <h3>Login <span>Account</span></h3>
+    </div>
+    <div class="row justify-content-center container">
+      <div class="col-sm-9 col-md-8 col-lg-6 col-xl-4">
+        <div class="contact-form login-form">
+          <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+            <div class="row">
+              <div class="col-xl-12">
+                <input
+                  type="text"
+                  placeholder="Email*"
+                  formControlName="email"
+                />
+              </div>
+              <div class="col-xl-12">
+                <input
+                  type="text"
+                  placeholder="Password*"
+                  formControlName="password"
+                />
+              </div>
+              <div class="col-xl-12">
+                <input type="submit" value="LOG IN" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- /.row end -->
+  </div>
+  <!-- /.container-fluid end -->
+</section>
+<!-- /.contact-area end -->
+
+<!-- /.contact-area end -->
+
+<section class="login-now">
+  <div class="container-fluid custom-container">
+    <div class="col-12">
+      <span>Dont have account</span>
+      <a [routerLink]="['/register']" class="btn-two" type="submit"
+        >Create Account</a
+      >
+    </div>
+    <!-- /.col-12 -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.login-now -->
