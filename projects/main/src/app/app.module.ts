@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { AuthInterceptor } from 'projects/main/interceptors/auth.interceptor';
+import { SpinnerInterceptor } from 'projects/main/interceptors/spinner.interceptor';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [AppComponent, DirectionDirective],
@@ -33,9 +35,11 @@ import { AuthInterceptor } from 'projects/main/interceptors/auth.interceptor';
         deps: [HttpClient],
       },
     }),
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })

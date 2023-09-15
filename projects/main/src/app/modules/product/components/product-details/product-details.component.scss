@@ -1,3 +1,5 @@
+$mainColor: #a00f76;
+
 .slider-for {
   img {
     width: 600px;
@@ -12,4 +14,12 @@
 .add-tocart-wrap {
   display: flex;
   gap: 1rem;
+}
+
+::ng-deep .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+  color: $mainColor !important;
+}
+
+::ng-deep .mat-mdc-tab .mdc-tab-indicator__content--underline {
+  border-color: $mainColor !important;
 }

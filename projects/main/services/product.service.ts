@@ -17,6 +17,8 @@ export class ProductService {
 
     if (categoriesFilter) {
       params = params.append('category_ids', JSON.stringify(categoriesFilter));
+      params = params.delete('page_size');
+      params = params.delete('page_number');
     }
 
     return this.http.get<any>(`${this.apiUrl}get-products`, { params }).pipe(
@@ -27,7 +29,7 @@ export class ProductService {
   }
 
   getProduct(id: any): Observable<Product> {
-    return this.http.get<Product>(`${this.apiUrl}services/products/${id}`);
+    return this.http.get<Product>(`${this.apiUrl}specific-product/${id}`);
   }
 
   getAllCategories(): Observable<any> {
