@@ -157,7 +157,7 @@ export class ProductFormComponent implements OnInit {
     productFormData.append('price', JSON.stringify(this.form.value.price));
     productFormData.append(
       'category_id',
-      this.form.value.category ? this.form.value.category_id : ''
+      JSON.stringify(this.form.value.category_id)
     );
     productFormData.append(
       'quantity',

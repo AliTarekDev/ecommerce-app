@@ -10,6 +10,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { TableModule } from 'primeng/table';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { SidebarModule } from 'primeng/sidebar';
 
 @NgModule({
   declarations: [],
@@ -25,6 +26,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     InputSwitchModule,
     TableModule,
     ConfirmDialogModule,
+    SidebarModule,
   ],
 })
 export class PrimeModule {}

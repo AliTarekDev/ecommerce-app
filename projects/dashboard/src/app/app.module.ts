@@ -15,6 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -33,11 +35,13 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     PrimeModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
   ],
   providers: [
     MessageService,
     ConfirmationService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })

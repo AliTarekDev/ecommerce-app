@@ -1,4 +1,4 @@
-<div class="admin-sidebar">
+<!-- <div class="admin-sidebar">
   <div class="logo">
     <img src="/assets/logo-removebg-preview.png" />
   </div>
@@ -26,4 +26,47 @@
       </li>
     </ul>
   </div>
-</div>
+</div> -->
+
+<section class="nav">
+  <div class="nav-toggle">
+    <i (click)="sidebarVisible = true" class="pi pi-bars"></i>
+    <!-- <p-button (click)="sidebarVisible = true" icon="pi pi-bars"></p-button> -->
+  </div>
+  <p-sidebar [(visible)]="sidebarVisible">
+    <div class="logo">
+      <img src="/assets/logo-removebg-preview.png" />
+
+      <div class="links">
+        <ul>
+          <li>
+            <a routerLink="/"><i class="pi pi-home"></i> Dashboard</a>
+          </li>
+          <li>
+            <a routerLink="/products"
+              ><i class="pi pi-briefcase"></i> Products</a
+            >
+          </li>
+          <li>
+            <a routerLink="/categories"
+              ><i class="pi pi-list"></i> Categories</a
+            >
+          </li>
+          <li>
+            <a routerLink="/orders"
+              ><i class="pi pi-shopping-cart"></i> Orders</a
+            >
+          </li>
+          <li>
+            <a routerLink="users"><i class="pi pi-users"></i>Users</a>
+          </li>
+          <li>
+            <a class="logout" style="cursor: pointer" (click)="logout()"
+              ><i class="pi pi-sign-out"></i> Sign out</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </p-sidebar>
+</section>

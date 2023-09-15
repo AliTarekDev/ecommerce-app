@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
 import { MessageService, ConfirmationService } from 'primeng/api';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',

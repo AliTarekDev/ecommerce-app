@@ -35,11 +35,11 @@
               <th pSortableColumn="price">
                 Price <p-sortIcon field="price"></p-sortIcon>
               </th>
-              <th pSortableColumn="stock">
-                Stock <p-sortIcon field="stock"></p-sortIcon>
+              <th pSortableColumn="quantity">
+                Stock <p-sortIcon field="quantity"></p-sortIcon>
               </th>
-              <th pSortableColumn="category">
-                Category <p-sortIcon field="category"></p-sortIcon>
+              <th pSortableColumn="category_id">
+                Category <p-sortIcon field="category_id"></p-sortIcon>
               </th>
               <th pSortableColumn="created">
                 Created At <p-sortIcon field="created"></p-sortIcon>
@@ -54,7 +54,7 @@
               <td><img [src]="product.image_url" draggable="false" /></td>
               <td>{{ product.price | currency }}</td>
               <td>{{ product.quantity }}</td>
-              <td>{{ "Category" }}</td>
+              <td>{{ product?.category?.name.ar }}</td>
               <td>{{ product.created_at | date : "short" }}</td>
               <td>
                 <p-button
