@@ -88,3 +88,11 @@ $mainColor: #a00f76;
   background-color: $mainColor !important;
   border-color: $mainColor !important;
 }
+
+#home-tab {
+  background-color: transparent;
+}
+
+::ng-deep .mat-mdc-paginator {
+  background-color: transparent !important;
+}

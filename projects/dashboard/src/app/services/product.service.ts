@@ -44,7 +44,10 @@ export class ProductService {
     return this.http.get<any>(`${this.apiUrl}services/products/${id}`);
   }
 
-  // updateProduct(product: any, productId) {
-  //   return this.http.put(`${this.apiUrl}`)
-  // }
+  updateProduct(product: any, productId) {
+    return this.http.post(
+      `${this.apiUrl}services/update-product/${productId}`,
+      product
+    );
+  }
 }

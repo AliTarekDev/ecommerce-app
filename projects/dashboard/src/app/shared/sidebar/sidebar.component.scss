@@ -1,0 +1,17 @@
+$mainColor: #a00f76;
+
+.nav {
+  background-color: black;
+  padding: 15px 0;
+}
+::ng-deep .p-sidebar-left {
+  width: 15rem !important;
+  background-color: black !important;
+}
+
+.pi-bars {
+  color: $mainColor;
+  font-size: 30px;
+  margin-left: 40px;
+  cursor: pointer;
+}

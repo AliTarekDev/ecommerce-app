@@ -58,27 +58,31 @@ export class ProductFormComponent implements OnInit {
 
         this._productService
           .getProduct(this.productId)
-          .subscribe((product: any) => {
-            this.form.controls['ar_name'].setValue(product.ar_name);
-            this.form.controls['en_name'].setValue(product.en_name);
+          .subscribe((res: any) => {
+            console.log(res, 'prod');
+
+            const { products } = res;
+
+            this.form.get('ar_name').setValue(products.name.ar);
+            this.form.controls['en_name'].setValue(products?.name?.en);
             this.form.controls['ar_description'].setValue(
-              product.ar_description
+              products.description?.ar
             );
             this.form.controls['en_description'].setValue(
-              product.en_description
+              products.description?.en
             );
-            this.form.controls['price'].setValue(product.price);
-            this.form.controls['quantity'].setValue(product.quantity);
-            this.form.controls['discount'].setValue(product.discount);
-            this.form.controls['ar_name'].setValue(product.ar_name);
-            this.form.controls['en_name'].setValue(product.en_name);
-            this.form.controls['ar_brand'].setValue(product.ar_brand);
-            this.form.controls['en_brand'].setValue(product.en_brand);
-            this.form.controls['ar_type'].setValue(product.ar_type);
-            this.form.controls['en_type'].setValue(product.en_type);
-            this.form.controls['featured'].setValue(product.featured);
-            this.form.controls['category_id'].setValue(product.category_id);
-            this.imageDisplay = product.image;
+            this.form.controls['price'].setValue(+products?.price || 0);
+            this.form.controls['quantity'].setValue(+products?.quantity || 0);
+            this.form.controls['discount'].setValue(+products?.discount || 0);
+            // this.form.controls['ar_name'].setValue(products.ar_name);
+            // this.form.controls['en_name'].setValue(products.en_name);
+            this.form.controls['ar_brand'].setValue(products.brand.ar);
+            this.form.controls['en_brand'].setValue(products.brand.en);
+            this.form.controls['ar_type'].setValue(products.type.ar);
+            this.form.controls['en_type'].setValue(products.type.ar);
+            this.form.controls['featured'].setValue(products.featured);
+            this.form.controls['category_id'].setValue(products.category_id);
+            this.imageDisplay = products.image_url;
             this.form.controls['image'].setValidators([]);
             this.form.controls['image'].updateValueAndValidity();
           });
@@ -89,8 +93,6 @@ export class ProductFormComponent implements OnInit {
   private _getCategories() {
     this._categoryService.getAllCategories().subscribe((response) => {
       this.categories = response.products.data;
-
-      console.log(this.categories, 'CAt');
     });
   }
 
@@ -119,65 +121,98 @@ export class ProductFormComponent implements OnInit {
     );
   }
 
-  _updateProduct() {}
+  _updateProduct(product: any) {
+    this._productService.updateProduct(product, this.productId).subscribe(
+      () => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: `Product is Updated !`,
+        });
+
+        timer(2000)
+          .toPromise()
+          .then(() => {
+            this.location.back();
+          });
+      },
+      () => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Product is not Updated !',
+        });
+      }
+    );
+  }
+
+  prepareFormData() {
+    const formData = new FormData();
+    Object.entries(this.form.value).forEach(([key, value]: any) => {
+      formData.append(key, value);
+    });
+
+    return formData;
+  }
 
   onSubmit() {
-    console.log(this.form.value);
+    console.log(this.prepareFormData());
 
-    const productFormData = new FormData();
+    if (this.form.invalid) return;
+    const productFormData: any = this.prepareFormData();
 
-    productFormData.append(
-      'ar_name',
-      this.form.value.ar_name ? this.form.value.ar_name : ''
-    );
-    productFormData.append(
-      'en_name',
-      this.form.value.en_name ? this.form.value.en_name : ''
-    );
-    productFormData.append(
-      'ar_description',
-      this.form.value.ar_description ? this.form.value.ar_description : ''
-    );
-    productFormData.append(
-      'en_description',
-      this.form.value.en_description ? this.form.value.en_description : ''
-    );
-    productFormData.append(
-      'image',
-      this.form.value.image ? this.form.value.image : ''
-    );
-    productFormData.append(
-      'ar_brand',
-      this.form.value.brand ? this.form.value.ar_brand : ''
-    );
-    productFormData.append(
-      'en_brand',
-      this.form.value.brand ? this.form.value.en_brand : ''
-    );
-    productFormData.append('price', JSON.stringify(this.form.value.price));
-    productFormData.append(
-      'category_id',
-      this.form.value.category ? this.form.value.category_id : ''
-    );
-    productFormData.append(
-      'quantity',
-      JSON.stringify(this.form.value.quantity)
-    );
-    productFormData.append(
-      'featured',
-      JSON.stringify(this.form.value.featured)
-    );
-    productFormData.append(
-      'discount',
-      JSON.stringify(this.form.value.discount)
-    );
-    // productFormData.append('ar_status', JSON.stringify(this.form.value.ar_status));
-    // productFormData.append('en_status', JSON.stringify(this.form.value.en_status));
-    productFormData.append('ar_type', JSON.stringify(this.form.value.ar_type));
-    productFormData.append('en_type', JSON.stringify(this.form.value.en_type));
+    // productFormData.append(
+    //   'ar_name',
+    //   this.form.value.ar_name ? this.form.value.ar_name : ''
+    // );
+    // productFormData.append(
+    //   'en_name',
+    //   this.form.value.en_name ? this.form.value.en_name : ''
+    // );
+    // productFormData.append(
+    //   'ar_description',
+    //   this.form.value.ar_description ? this.form.value.ar_description : ''
+    // );
+    // productFormData.append(
+    //   'en_description',
+    //   this.form.value.en_description ? this.form.value.en_description : ''
+    // );
+    // productFormData.append(
+    //   'image',
+    //   this.form.value.image ? this.form.value.image : ''
+    // );
+    // productFormData.append(
+    //   'ar_brand',
+    //   this.form.value.brand ? this.form.value.ar_brand : ''
+    // );
+    // productFormData.append(
+    //   'en_brand',
+    //   this.form.value.brand ? this.form.value.en_brand : ''
+    // );
+    // productFormData.append('price', JSON.stringify(this.form.value.price));
+    // productFormData.append(
+    //   'category_id',
+    //   JSON.stringify(this.form.value.category_id)
+    // );
+    // productFormData.append(
+    //   'quantity',
+    //   JSON.stringify(this.form.value.quantity)
+    // );
+    // productFormData.append(
+    //   'featured',
+    //   JSON.stringify(this.form.value.featured)
+    // );
+    // productFormData.append(
+    //   'discount',
+    //   JSON.stringify(this.form.value.discount)
+    // );
+    // // productFormData.append('ar_status', JSON.stringify(this.form.value.ar_status));
+    // // productFormData.append('en_status', JSON.stringify(this.form.value.en_status));
+    // productFormData.append('ar_type', JSON.stringify(this.form.value.ar_type));
+    // productFormData.append('en_type', JSON.stringify(this.form.value.en_type));
 
     if (this.editmode) {
-      // this._updateProduct(productFormData)
+      this._updateProduct(productFormData);
     } else {
       this._addProduct(productFormData);
     }

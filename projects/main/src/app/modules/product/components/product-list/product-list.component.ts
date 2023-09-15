@@ -81,7 +81,11 @@ export class ProductListComponent implements OnInit {
     console.log(e, 'Event');
     const { pageSize, pageIndex } = e;
 
-    this.paginationOptions.pageNumber = +pageIndex;
+    if (pageIndex == 0) {
+      this.paginationOptions.pageNumber = +pageIndex;
+    } else {
+      this.paginationOptions.pageNumber = +pageIndex + 1;
+    }
     this.paginationOptions.pageSize = +pageSize;
 
     this.getProductList(this.paginationOptions);

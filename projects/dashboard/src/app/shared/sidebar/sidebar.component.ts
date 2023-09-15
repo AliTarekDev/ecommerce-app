@@ -7,6 +7,8 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
+  sidebarVisible: boolean = false;
+
   constructor(private _authService: AuthService) {}
 
   ngOnInit(): void {}
