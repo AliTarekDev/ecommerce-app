@@ -48,7 +48,7 @@ export class ProductListComponent implements OnInit {
       .getProductList(requestedData, categoriesFilter)
       .subscribe((res: any) => {
         console.log(res, 'ress');
-        this.products = res.products;
+        this.products = res.products || res.data;
         this.pagination = res.pagination;
       });
   }
