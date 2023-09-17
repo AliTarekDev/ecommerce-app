@@ -71,8 +71,6 @@ export class ProductListComponent implements OnInit {
       .filter((cat) => cat.checked)
       .map((catId) => catId.id);
 
-    console.log(checkedCategoriesIds, 'IDS');
-
     this.getProductList(this.paginationOptions, checkedCategoriesIds);
   }
 

@@ -22,19 +22,11 @@ export class ProductService {
       categoriesFilter.forEach((el, i) => {
         params = params.append(`category_ids[${i}]`, JSON.stringify(el));
       });
-      return this.http
-        .get<any>(`${this.apiUrl}services/get-products-By/category`, { params })
-        .pipe(
-          tap((res) => {
-            console.log(res);
-          })
-        );
-    } else
-      return this.http.get<any>(`${this.apiUrl}get-products`, { params }).pipe(
-        tap((res) => {
-          console.log(res);
-        })
+      return this.http.get<any>(
+        `${this.apiUrl}services/get-products-By/category`,
+        { params }
       );
+    } else return this.http.get<any>(`${this.apiUrl}get-products`, { params });
   }
 
   getProduct(id: any): Observable<Product> {

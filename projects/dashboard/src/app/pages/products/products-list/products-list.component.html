@@ -57,17 +57,19 @@
               <td>{{ product?.category?.name.ar }}</td>
               <td>{{ product.created_at | date : "short" }}</td>
               <td>
-                <p-button
-                  icon="pi pi-trash"
-                  styleClass="p-button-danger mr-2"
+                <button
+                  class="btn btn-danger"
                   (click)="deleteProduct(product.id)"
-                ></p-button>
+                >
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
 
-                <p-button
-                  icon="pi pi-pencil"
-                  styleClass="p-button-success"
+                <button
+                  class="btn btn-success"
                   (click)="updateProduct(product.id)"
-                ></p-button>
+                >
+                  <i class="fa-solid fa-pencil"></i>
+                </button>
               </td>
             </tr>
           </ng-template>
