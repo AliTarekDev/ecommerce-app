@@ -15,3 +15,17 @@ $mainColor: #a00f76;
   margin-left: 40px;
   cursor: pointer;
 }
+
+
+
+.bars {
+  padding: 16px;
+  background-color: transparent;
+  border: none;
+  margin-left: 15px;
+  cursor: pointer;
+  i {
+    color: $mainColor;
+    font-size: 22px;
+  }
+}

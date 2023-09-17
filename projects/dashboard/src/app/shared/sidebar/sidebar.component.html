@@ -30,7 +30,10 @@
 
 <section class="nav">
   <div class="nav-toggle">
-    <i (click)="sidebarVisible = true" class="pi pi-bars"></i>
+    <button class="bars" (click)="sidebarVisible = true">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <!-- <i (click)="sidebarVisible = true" class="pi pi-bars"></i> -->
     <!-- <p-button (click)="sidebarVisible = true" icon="pi pi-bars"></p-button> -->
   </div>
   <p-sidebar [(visible)]="sidebarVisible">
@@ -44,25 +47,25 @@
           </li>
           <li>
             <a routerLink="/products"
-              ><i class="pi pi-briefcase"></i> Products</a
+              ><i class="fa-solid fa-briefcase"></i> Products</a
             >
           </li>
           <li>
             <a routerLink="/categories"
-              ><i class="pi pi-list"></i> Categories</a
+              ><i class="fa-solid fa-list"></i> Categories</a
             >
           </li>
           <li>
             <a routerLink="/orders"
-              ><i class="pi pi-shopping-cart"></i> Orders</a
+              ><i class="fa-solid fa-cart-shopping"></i> Orders</a
             >
           </li>
           <li>
-            <a routerLink="users"><i class="pi pi-users"></i>Users</a>
+            <a routerLink="users"><i class="fa-solid fa-users"></i>Users</a>
           </li>
           <li>
             <a class="logout" style="cursor: pointer" (click)="logout()"
-              ><i class="pi pi-sign-out"></i> Sign out</a
+              ><i class="fa-solid fa-right-from-bracket"></i> Sign out</a
             >
           </li>
         </ul>
