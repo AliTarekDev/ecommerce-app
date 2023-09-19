@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import AOS from 'aos';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-featured-products',
@@ -17,7 +18,7 @@ import AOS from 'aos';
   // ],
 })
 export class FeaturedProductsComponent implements OnInit {
-  constructor() {}
+  constructor(public translate: TranslateService) {}
 
   ngOnInit(): void {
     /*************** animation */

@@ -19,7 +19,9 @@
 <section class="contact-area mt-5">
   <div class="container-fluid custom-container">
     <div class="section-heading pb-30">
-      <h3>join with <span>us</span></h3>
+      <h3>
+        {{ "joinWith" | translate }} <span>{{ "us" | translate }}</span>
+      </h3>
     </div>
     <div class="row justify-content-center">
       <div class="col-md-8 col-lg-8 col-xl-6">
@@ -27,22 +29,25 @@
           <form action="#">
             <div class="row">
               <div class="col-xl-6">
-                <input type="text" placeholder="First Name*" />
+                <input type="text" [placeholder]="'firstName' | translate" />
               </div>
               <div class="col-xl-6">
-                <input type="text" placeholder="Last Name*" />
+                <input type="text" [placeholder]="'lastName' | translate" />
               </div>
               <div class="col-xl-6">
-                <input type="text" placeholder="Email*" />
+                <input type="text" [placeholder]="'email' | translate" />
               </div>
               <div class="col-xl-6">
-                <input type="text" placeholder="Website" />
+                <input type="text" [placeholder]="'website' | translate" />
               </div>
               <div class="col-xl-12">
-                <textarea name="message" placeholder="Message"></textarea>
+                <textarea
+                  name="message"
+                  [placeholder]="'message' | translate"
+                ></textarea>
               </div>
               <div class="col-xl-12">
-                <input type="submit" value="SUBMIT" />
+                <input type="submit" [value]="'submit' | translate" />
               </div>
             </div>
           </form>
@@ -63,7 +68,9 @@
 <section class="store-area padding-120">
   <div class="container">
     <div class="section-heading pb-30">
-      <h3>SHOP ALSO <span>HERE</span></h3>
+      <h3>
+        {{ "shopAlso" | translate }} <span>{{ "here" | translate }}</span>
+      </h3>
     </div>
     <div class="row">
       <div class="col-md-4">

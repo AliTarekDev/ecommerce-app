@@ -42,10 +42,17 @@ export class ProductListComponent implements OnInit {
 
   getProductList(
     requestedData?: { pageSize: number; pageNumber: Number },
-    categoriesFilter?: any
+    categoriesFilter?: any,
+    filterOption?: string,
+    filterByName?: string
   ) {
     this._productService
-      .getProductList(requestedData, categoriesFilter)
+      .getProductList(
+        requestedData,
+        categoriesFilter,
+        filterOption,
+        filterByName
+      )
       .subscribe((res: any) => {
         console.log(res, 'ress');
         this.products = res.products || res.data;
@@ -87,5 +94,29 @@ export class ProductListComponent implements OnInit {
     this.paginationOptions.pageSize = +pageSize;
 
     this.getProductList(this.paginationOptions);
+  }
+
+  /****** Search By Price *******/
+
+  filterByPrice(priceType: string) {
+    console.log(priceType, 'Val');
+
+    /***** to remove checked category ****/
+    this.categories.map((cat) => (cat.checked = false));
+
+    const filterOption = priceType;
+
+    this.getProductList(null, [], filterOption);
+  }
+
+  /******* Filter By Name ****/
+
+  filterByName(event: any) {}
+
+  sendSearchName(name: string) {
+    /***** to remove checked category ****/
+    this.categories.map((cat) => (cat.checked = false));
+
+    this.getProductList(null, [], null, name);
   }
 }

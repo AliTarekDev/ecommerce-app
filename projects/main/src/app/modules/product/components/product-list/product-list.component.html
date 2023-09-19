@@ -27,14 +27,18 @@
         <div class="shop-sidebar left-side">
           <div class="sidebar-widget sidebar-search">
             <input
+              (input)="filterByName($event)"
+              (keyup.enter)="sendSearchName(inp.value)"
               type="text"
               placeholder="{{ 'searchProduct' | translate }}...."
+              #inp
             />
             <button
               type="submit"
               [ngStyle]="{
                 right: _translate.getCurrentLanguage() == 'ar' ? '80%' : 0
               }"
+              (click)="sendSearchName(inp.value)"
             >
               <i class="fas fa-search"></i>
             </button>
@@ -62,6 +66,7 @@
                   </div>
                   <div>
                     <mat-checkbox
+                      [checked]="category?.checked"
                       (change)="filterByCategory(category)"
                     ></mat-checkbox>
                   </div>
@@ -76,12 +81,24 @@
             </h6>
             <div class="price-range">
               <div id="slider-range"></div>
-              <ngx-slider
+              <!-- <ngx-slider
                 [(value)]="minValue"
                 [(highValue)]="maxValue"
                 [options]="options"
-              ></ngx-slider>
-              <span>Price :</span>
+              ></ngx-slider> -->
+              <mat-button-toggle-group
+                name="fontStyle"
+                aria-label="Font Style"
+                (change)="filterByPrice($event.value)"
+              >
+                <mat-button-toggle value="priceLtH"
+                  >Low To High</mat-button-toggle
+                >
+                <mat-button-toggle value="priceHtL"
+                  >High To Low</mat-button-toggle
+                >
+              </mat-button-toggle-group>
+              <!-- <span>Price :</span> -->
             </div>
           </div>
 

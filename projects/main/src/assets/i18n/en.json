@@ -71,5 +71,18 @@
   "liquidation": "Liquidation",
 
   "IndustrialProductionForcesCompany": "Industrial Production Forces Company",
-  "profileMarvel": "profile Marvel Home"
+  "profileMarvel": "profile Marvel Home",
+  "layoutAbout": "Keeping this at the heart of everything we do, we serve a rapidly evolving clientele, keeping them in touch with the latest, enabling them to express their individuality.",
+  "layoutAbout2": "Combining a century old family lineage in the craft of fine furniture with a focus on design and innovation, Al Huzaifa has defined furniture fashion in the region for over four decades now.",
+  "learnMore": "Learn More",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "email": "ايميل",
+  "website": "Website",
+  "message": "Message",
+  "submit": "SUBMIT",
+  "joinWith": "join with",
+  "us": "us",
+  "shopAlso": "shop also",
+  "here": "here"
 }

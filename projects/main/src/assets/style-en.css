@@ -1,5 +1,9 @@
 body {
   /* background-color: yellow !important; */
-  font-family: "Noto Sans Arabic", sans-serif !important;
-  font-family: "Pompiere", cursive !important;
+  /* font-family: "Noto Sans Arabic", sans-serif !important;
+  font-family: "Pompiere", cursive !important; */
+
+  font-family: "Lato", sans-serif;
+  font-family: "Noto Sans Arabic", sans-serif;
+  font-family: "Pompiere", cursive;
 }
