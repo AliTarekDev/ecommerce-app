@@ -27,7 +27,7 @@ export class ProductService {
       params = params.delete('page_size');
       params = params.delete('page_number');
       categoriesFilter.forEach((el, i) => {
-        params = params.append(`category_ids[${i}]`, JSON.stringify(el));
+        params = params.append(`category_ids[${i}]`, JSON.stringify(+el));
       });
       return this.http.get<any>(
         `${this.apiUrl}services/get-products-By/category`,

@@ -1,0 +1,172 @@
+<!-- Start Contact Area  
+    ============================================= -->
+<div id="contact" class="contact-us-area default-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mb-4">
+        <div
+          class="section-heading"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          <h3>
+            {{ "contact" | translate }}
+            <span>{{ "us" | translate }}</span>
+          </h3>
+
+          <p>{{ "h5" | translate }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 contact-form">
+        <h2>{{ "letsTalkAbout" | translate }}</h2>
+        <form
+          action="assets/mail/contact.php"
+          method="POST"
+          class="contact-form"
+        >
+          <div class="col-md-12">
+            <div class="row">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  [placeholder]="'name' | translate"
+                  type="text"
+                />
+                <span class="alert-error"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  [placeholder]="'email' | translate"
+                  type="email"
+                />
+                <span class="alert-error"></span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  [placeholder]="'phone' | translate"
+                  type="text"
+                />
+                <span class="alert-error"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="form-group comments">
+                <textarea
+                  class="form-control"
+                  id="comments"
+                  name="comments"
+                  [placeholder]="'tellUsAboutProject' | translate"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <a href="" class="btn-two">{{ "sendMessage" | translate }}</a>
+            </div>
+          </div>
+          <!-- Alert Message -->
+          <div class="col-md-12 alert-notification">
+            <div id="message" class="alert-msg"></div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4 address">
+        <div class="address-items">
+          <ul class="info">
+            <li>
+              <h4>{{ "officeLocation" | translate }}</h4>
+              <div class="icon">
+                <i
+                  class="fas fa-map-marked-alt"
+                  [ngStyle]="{
+                    'margin-left': translate.currentLang == 'ar' ? '15px' : ''
+                  }"
+                ></i>
+              </div>
+              <span
+                >{{ "riyadh" | translate }},<br />
+                {{ "exit18" | translate }},<br />
+                {{ "istanbulStreet" | translate }}</span
+              >
+            </li>
+            <li>
+              <h4>{{ "phone" | translate }}</h4>
+              <div class="icon">
+                <i
+                  class="fas fa-phone"
+                  [ngStyle]="{
+                    'margin-left': translate.currentLang == 'ar' ? '15px' : ''
+                  }"
+                ></i>
+              </div>
+              <span dir="ltr">0553757575 <br />+966 11 227 1837</span>
+            </li>
+            <li>
+              <h4>{{ "email" | translate }}</h4>
+              <div class="icon">
+                <i
+                  class="fas fa-envelope-open"
+                  [ngStyle]="{
+                    'margin-left': translate.currentLang == 'ar' ? '15px' : ''
+                  }"
+                ></i>
+              </div>
+              <span>sales@marvelhome.com.sa</span>
+            </li>
+          </ul>
+          <h4>{{ "socialAddress" | translate }}</h4>
+          <ul class="social">
+            <li class="facebook">
+              <a
+                href="https://www.facebook.com/profile.php?id=100067571287373"
+                target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+            </li>
+            <li class="twitter">
+              <a
+                href="https://twitter.com/marvel_hoome?s=21&t=rbTuaqCNxKNotEnHHiwMcQ"
+                target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </li>
+            <li class="pinterest">
+              <a
+                href="https://www.tiktok.com/@marvel_hoome?_t=8efkPoRY3gg&_r=1"
+                target="_blank"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </li>
+            <li class="instagram">
+              <a
+                href="https://instagram.com/marvel_hoome?igshid=MzRlODBiNWFlZA=="
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Contact -->

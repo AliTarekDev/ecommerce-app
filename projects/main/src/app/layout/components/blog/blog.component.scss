@@ -1,11 +1,84 @@
 $mainColor: #a00f76;
-.blog {
-  padding: 0 20px;
-  &-cont {
-    h2 {
-      color: $mainColor;
-      font-size: 35px;
-      margin-bottom: 30px;
-    }
-  }
+
+#about {
+  margin-bottom: 100px;
+}
+
+img {
+  height: 100%;
+}
+.about-area .default.info h4 {
+  color: $mainColor;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.about-area .thumb {
+  padding-right: 35px;
+}
+
+.about-area .default.info h2 {
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.about-area .bottom-info {
+  border-top: 1px solid #e7e7e7;
+  margin-top: 35px;
+  padding-top: 30px;
+}
+
+.about-area .bottom-info span {
+  display: table;
+  padding-top: 2px;
+}
+
+.about-area .default.info h3 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.about-area .default.info > a {
+  margin-top: 10px;
+}
+
+.about-area ul li {
+  display: block;
+  margin-bottom: 25px;
+  padding-left: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-area ul li::before {
+  color: $mainColor;
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  left: 0;
+  position: absolute;
+  top: -5px;
+}
+
+.about-area ul li h5 {
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.about-area ul li:last-child {
+  border: medium none;
+  margin: 0;
+  padding: 0 0 0 25px;
+}
+
+.about-area ul {
+  margin: 30px 0 15px;
+}
+
+.about-area .thumb.left-width img {
+  margin-left: -20%;
+  max-width: 120%;
 }

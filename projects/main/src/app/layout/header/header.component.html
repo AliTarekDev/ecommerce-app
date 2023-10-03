@@ -68,7 +68,11 @@
         />
 
         <div class="carousel-item-data">
-          <h1>
+          <h1
+            [ngStyle]="{
+              direction: translate.currentLang == 'ar' ? 'ltr' : 'rtl'
+            }"
+          >
             {{ "summer" | translate }}
             <span class="header-subtitle">{{ "collections" | translate }}</span>
           </h1>

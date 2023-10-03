@@ -34,13 +34,51 @@
           >
         </li>
 
-        <li class="nav-item nav-item-dropdown">
+        <li class="nav-item shop-dropdown dropdown">
           <a
             class="nav-link"
             [routerLink]="[selectedLang + '/product/product-list']"
           >
             {{ "shop" | translate }}</a
           >
+          <div
+            class="dropdown-menu"
+            aria-labelledby="navbarDropdown"
+            #dropdown
+            [ngStyle]="{
+              left: translate.currentLang == 'en' ? '-100px' : 'auto',
+            
+            }"
+          >
+            <ng-container *ngIf="translate.currentLang == 'ar'">
+              <a
+                class="dropdown-item"
+                [routerLink]="[
+                  './' +
+                    translate.currentLang +
+                    '/product/product-list/' +
+                    cat.id
+                ]"
+                *ngFor="let cat of categories | async"
+              >
+                {{ cat.name.ar }}
+              </a>
+            </ng-container>
+
+            <ng-container *ngIf="translate.currentLang == 'en'">
+              <a
+                class="dropdown-item"
+                [routerLink]="[
+                  './' +
+                    translate.currentLang +
+                    '/product/product-list/' +
+                    cat.id
+                ]"
+                *ngFor="let cat of categories | async"
+                >{{ cat.name.en }}</a
+              >
+            </ng-container>
+          </div>
         </li>
 
         <li class="nav-item">
@@ -57,6 +95,49 @@
             {{ "contactUs" | translate }}</a
           >
         </li>
+        <!-- <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            (click)="dropdown.classList.toggle('show')"
+          >
+            {{ "categories" | translate }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" #dropdown>
+            <ng-container *ngIf="translate.currentLang == 'ar'">
+              <a
+                class="dropdown-item"
+                [routerLink]="[
+                  './' +
+                    translate.currentLang +
+                    '/product/product-list/' +
+                    cat.id
+                ]"
+                *ngFor="let cat of categories | async"
+              >
+                {{ cat.name.ar }}
+              </a>
+            </ng-container>
+
+            <ng-container *ngIf="translate.currentLang == 'en'">
+              <a
+                class="dropdown-item"
+                [routerLink]="[
+                  './' +
+                    translate.currentLang +
+                    '/product/product-list/' +
+                    cat.id
+                ]"
+                *ngFor="let cat of categories | async"
+                >{{ cat.name.en }}</a
+              >
+            </ng-container>
+          </div>
+        </li> -->
       </ul>
     </div>
     <a class="navbar-brand" routerLink="/">
@@ -94,8 +175,9 @@
 
         <li class="top-cart">
           <a href="javascript:void(0)" class="cart" (click)="openCart()"
-            ><i class="fa fa-shopping-cart" aria-hidden="true"></i> (2)</a
-          >
+            ><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <!--(2)-->
+          </a>
           <div
             class="cart-drop"
             [ngStyle]="{ right: translate.currentLang == 'ar' ? '-220px' : '' }"

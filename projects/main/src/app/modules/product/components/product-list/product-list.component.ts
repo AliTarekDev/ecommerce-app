@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Options } from 'ngx-slider-v2';
 import { ProductService } from 'projects/main/services/product.service';
@@ -26,18 +26,39 @@ export class ProductListComponent implements OnInit {
     step: 5,
   };
 
+  catId: string = '';
+  isCategoryPage: boolean = false;
   constructor(
     private _productService: ProductService,
     public _translate: LanguageService,
     private _router: Router,
-    public translate: TranslateService
-  ) {}
+    public translate: TranslateService,
+    private _route: ActivatedRoute
+  ) {
+    this._route.paramMap.subscribe((params: any) => {
+      console.log(params, 'Params');
+      this.catId = params?.id;
+    });
+  }
 
   products: any[] = [];
 
   ngOnInit(): void {
     this.getProductList(this.paginationOptions);
     this.getAllCategories();
+    this.checkCatInUrl();
+  }
+
+  checkCatInUrl() {
+    this._route.params.subscribe((params) => {
+      debugger;
+      params?.['id']
+        ? this.getProductList(null, [params?.['id']], '', '')
+        : this.getProductList();
+      params?.['id']
+        ? (this.isCategoryPage = true)
+        : (this.isCategoryPage = false);
+    });
   }
 
   getProductList(
@@ -66,6 +87,7 @@ export class ProductListComponent implements OnInit {
     });
   }
 
+  /******************** Filter By Category */
   filterByCategory(category: Category) {
     console.log(category);
     if (category.checked) {

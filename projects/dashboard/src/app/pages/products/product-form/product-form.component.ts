@@ -82,7 +82,10 @@ export class ProductFormComponent implements OnInit {
             this.form.controls['en_type'].setValue(products.type.ar);
             this.form.controls['featured'].setValue(products.featured);
             this.form.controls['category_id'].setValue(products.category_id);
+            this.form.controls['image'].setValue(products.image_url);
+
             this.imageDisplay = products.image_url;
+
             this.form.controls['image'].setValidators([]);
             this.form.controls['image'].updateValueAndValidity();
           });
@@ -156,6 +159,7 @@ export class ProductFormComponent implements OnInit {
   }
 
   onSubmit() {
+    debugger;
     console.log(this.prepareFormData());
 
     if (this.form.invalid) return;

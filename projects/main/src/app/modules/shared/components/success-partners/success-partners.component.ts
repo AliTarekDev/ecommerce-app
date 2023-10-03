@@ -40,7 +40,7 @@ export class SuccessPartnersComponent implements OnInit {
     touchDrag: true,
     pullDrag: false,
     dots: false,
-    navSpeed: 400,
+    navSpeed: 100,
     smartSpeed: 1000,
     navText: [],
     responsive: {
