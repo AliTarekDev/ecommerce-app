@@ -218,3 +218,17 @@ nav {
   // display: block;
   opacity: 1;
 }
+
+.active {
+  color: $mainColor !important;
+}
+
+@media (max-width: 992px) {
+  // .dropdown:hover .dropdown-menu {
+  //   opacity: 0;
+  // }
+
+  .dropdown-menu {
+    display: none !important;
+  }
+}

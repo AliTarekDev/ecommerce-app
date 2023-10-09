@@ -18,9 +18,9 @@
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
           <a
-            class="nav-link active"
+            class="nav-link"
             aria-current="page"
-            routerLink="/"
+            [routerLink]="[translate.currentLang + '/home']"
             routerLinkActive="active"
             >{{ "home" | translate }}</a
           >
@@ -29,7 +29,8 @@
           <a
             class="nav-link"
             style="cursor: pointer"
-            [routerLink]="[selectedLang + '/about']"
+            [routerLink]="[translate.currentLang + '/about']"
+            routerLinkActive="active"
             >{{ "about" | translate }}</a
           >
         </li>
@@ -37,7 +38,8 @@
         <li class="nav-item shop-dropdown dropdown">
           <a
             class="nav-link"
-            [routerLink]="[selectedLang + '/product/product-list']"
+            [routerLink]="[translate.currentLang + '/product/product-list']"
+            routerLinkActive="active"
           >
             {{ "shop" | translate }}</a
           >
@@ -91,7 +93,11 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="[selectedLang + '/contact']">
+          <a
+            class="nav-link"
+            [routerLink]="[translate.currentLang + '/contact']"
+            routerLinkActive="active"
+          >
             {{ "contactUs" | translate }}</a
           >
         </li>
@@ -168,7 +174,10 @@
         </li>
 
         <li class="user-login">
-          <a [routerLink]="[selectedLang + '/login']" routerLinkActive="active">
+          <a
+            [routerLink]="[translate.currentLang + '/login']"
+            routerLinkActive="active"
+          >
             <i class="fa fa-user" aria-hidden="true"></i
           ></a>
         </li>

@@ -60,7 +60,7 @@ export class SuccessPartnersComponent implements OnInit {
     nav: false,
     margin: 15,
     autoplay: true,
-    autoplayHoverPause: true,
+    autoplayHoverPause: false,
 
     // center: true,
   };

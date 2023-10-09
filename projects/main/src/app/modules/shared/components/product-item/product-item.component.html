@@ -4,7 +4,7 @@
   </div>
   <div class="mid-wrapper">
     <h5 class="pro-title">
-      <a href="product.html">{{ product?.name?.ar }}</a>
+      <a (click)="goToDetailsPage(product)">{{ product?.name?.ar }}</a>
     </h5>
     <!-- <span>$60.00</span> -->
   </div>
@@ -12,10 +12,14 @@
   <div class="pro-icon">
     <ul>
       <li>
-        <a href="#"><i class="fa-solid fa-heart"></i></a>
+        <a href="#" (click)="preventDef($event)"
+          ><i class="fa-solid fa-heart"></i
+        ></a>
       </li>
       <li>
-        <a href="#"><i class="fa-solid fa-arrow-right-arrow-left"></i></a>
+        <a href="#" (click)="preventDef($event)"
+          ><i class="fa-solid fa-arrow-right-arrow-left"></i
+        ></a>
       </li>
       <li>
         <a class="trigger" (click)="goToDetailsPage(product)"

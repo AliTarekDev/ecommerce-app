@@ -43,4 +43,8 @@ export class ProductItemComponent {
       `/${this.translate.currentLang}/product/product-details/${product.id}`,
     ]);
   }
+
+  preventDef(e: any) {
+    e.preventDefault();
+  }
 }
