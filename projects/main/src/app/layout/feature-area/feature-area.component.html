@@ -35,7 +35,12 @@
             >
               <i class="fa-solid fa-truck-fast"></i>
             </div>
-            <div class="f-content">
+            <div
+              class="f-content"
+              [ngStyle]="{
+                'text-align': translate.currentLang == 'ar' ? 'right' : 'left'
+              }"
+            >
               <h6>
                 <a>{{ "freeShipping" | translate }}</a>
               </h6>
@@ -61,7 +66,12 @@
             >
               <i class="fa-solid fa-globe"></i>
             </div>
-            <div class="f-content">
+            <div
+              class="f-content"
+              [ngStyle]="{
+                'text-align': translate.currentLang == 'ar' ? 'right' : 'left'
+              }"
+            >
               <h6>
                 <a>{{ "onlineSupport" | translate }}</a>
               </h6>
@@ -87,7 +97,12 @@
             >
               <i class="fa-solid fa-phone"></i>
             </div>
-            <div class="f-content">
+            <div
+              class="f-content"
+              [ngStyle]="{
+                'text-align': translate.currentLang == 'ar' ? 'right' : 'left'
+              }"
+            >
               <h6>
                 <a>{{ "customerService" | translate }}</a>
               </h6>
@@ -113,7 +128,12 @@
             >
               <i class="fa-solid fa-percent"></i>
             </div>
-            <div class="f-content">
+            <div
+              class="f-content"
+              [ngStyle]="{
+                'text-align': translate.currentLang == 'ar' ? 'right' : 'left'
+              }"
+            >
               <h6>
                 <a>{{ "memberDiscount" | translate }}</a>
               </h6>

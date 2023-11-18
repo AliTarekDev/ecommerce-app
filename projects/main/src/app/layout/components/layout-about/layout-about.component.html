@@ -1,4 +1,4 @@
-<section class="layout mt-5">
+<!-- <section class="layout mt-5">
   <div class="container">
     <div class="content">
       <div class="block-content">
@@ -33,5 +33,44 @@
         </div>
       </div>
     </div>
+  </div>
+</section> -->
+
+<section class="layout">
+  <div class="container grid">
+    <div class="layout-1">
+      <img
+        src="./assets/images/home/15.jpeg"
+        alt=""
+        [ngStyle]="{
+          'max-height': translate.currentLang == 'ar' ? '50%' : '100%'
+        }"
+      />
+      <h3 class="appear mt-3">
+        {{ "layoutAbout" | translate }}
+      </h3>
+    </div>
+
+    <div class="layout-2">
+      <img
+        src="./assets/images/home/12.jpeg"
+        alt=""
+        [ngStyle]="{
+          'max-height': translate.currentLang == 'ar' ? '100%' : '50%'
+        }"
+      />
+
+      <h3 class="appear mt-3">
+        {{ "layoutAbout2" | translate }}
+      </h3>
+    </div>
+  </div>
+
+  <div class="container d-flex justify-content-end">
+    <a
+      class="btn-two"
+      [routerLink]="['/' + translate.currentLang + '/about']"
+      >{{ "learnMore" | translate }}</a
+    >
   </div>
 </section>

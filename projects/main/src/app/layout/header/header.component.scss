@@ -82,3 +82,10 @@ $mainColor: #a00f76;
     font-weight: 600;
   }
 }
+
+@media (max-width: 676px) {
+  h1 {
+    font-size: 22px !important;
+    text-align: center !important;
+  }
+}

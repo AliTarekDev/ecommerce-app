@@ -1,5 +1,4 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language.service';
 import { NavigationEnd, Router } from '@angular/router';
 import AOS from 'aos';

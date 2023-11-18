@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'en/home',
+    redirectTo: 'ar/home',
     pathMatch: 'full',
   },
   {
