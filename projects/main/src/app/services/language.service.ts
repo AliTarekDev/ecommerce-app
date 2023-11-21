@@ -12,13 +12,12 @@ export class LanguageService {
   ) {}
 
   setInitialAppLanguage() {
-    debugger;
     let language = this.getLanguageFromUrl();
     if (language) {
       this.translateService.use(language);
     } else {
       // Default language
-      this.translateService.use('en');
+      this.translateService.use('ar');
     }
   }
 
@@ -31,6 +30,8 @@ export class LanguageService {
   getLanguageFromUrl(): string {
     debugger;
     const urlLang = window.location.pathname.split('/')[1];
+    console.log(window.location.pathname.split('/'));
+
     const supportedLanguages = ['en', 'ar'];
 
     return supportedLanguages.includes(urlLang) ? urlLang : '';

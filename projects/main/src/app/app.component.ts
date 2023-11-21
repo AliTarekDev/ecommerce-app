@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language.service';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import AOS from 'aos';
 
 @Component({
@@ -21,6 +20,13 @@ export class AppComponent implements OnInit {
     this.languageService.setInitialAppLanguage();
     this.setDirection();
     this.scrollToTopAction();
+
+    this._router.events.subscribe((event) => {
+      if (!(event instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0);
+    });
 
     AOS.init();
   }

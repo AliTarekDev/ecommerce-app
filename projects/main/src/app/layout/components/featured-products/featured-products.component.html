@@ -12,7 +12,11 @@
         {{ "h1" | translate }}
       </p>
 
-      <a class="btn-two">{{ "shopNow" | translate }}</a>
+      <a
+        class="btn-two"
+        [routerLink]="['/' + translate.currentLang + '/product/product-list']"
+        >{{ "shopNow" | translate }}</a
+      >
     </app-section-title>
 
     <div class="row">

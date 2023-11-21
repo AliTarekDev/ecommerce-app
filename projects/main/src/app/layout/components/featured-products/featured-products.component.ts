@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import AOS from 'aos';
+import { TranslateService } from '@ngx-translate/core';
+import { ProductService } from 'projects/main/services/product.service';
+import { map, filter, tap } from 'rxjs';
 
 @Component({
   selector: 'app-featured-products',
@@ -17,22 +20,38 @@ import AOS from 'aos';
   // ],
 })
 export class FeaturedProductsComponent implements OnInit {
-  constructor() {}
+  constructor(
+    public translate: TranslateService,
+    private _productService: ProductService
+  ) {}
 
   ngOnInit(): void {
     /*************** animation */
     AOS.init({});
+    this.getFeaturedProdcuts();
   }
 
   products = [
-    { image_url: './assets/images/home/1.jpeg' },
-    { image_url: './assets/images/home/8.jpeg' },
-    { image_url: './assets/images/home/3.jpeg' },
-    { image_url: './assets/images/home/4.jpeg' },
-    { image_url: './assets/images/home/5.jpeg' },
-    { image_url: './assets/images/home/6.jpeg' },
-    { image_url: './assets/images/home/7.jpeg' },
+    // { image_url: './assets/images/home/1.jpeg' },
+    // { image_url: './assets/images/home/8.jpeg' },
+    // { image_url: './assets/images/home/3.jpeg' },
+    // { image_url: './assets/images/home/4.jpeg' },
+    // { image_url: './assets/images/home/5.jpeg' },
+    // { image_url: './assets/images/home/6.jpeg' },
+    // { image_url: './assets/images/home/7.jpeg' },
   ];
+
+  getFeaturedProdcuts() {
+    this._productService
+      .getProductList({})
+      .pipe(map((products) => products.products))
+      .subscribe((products: any) => {
+        // console.log(products, 'featured');
+        const newProducts = products.filter((product) => product.featured == 1);
+        this.products = newProducts;
+      });
+  }
+
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,

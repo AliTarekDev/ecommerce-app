@@ -96,3 +96,8 @@ $mainColor: #a00f76;
 ::ng-deep .mat-mdc-paginator {
   background-color: transparent !important;
 }
+
+::ng-deep .mat-button-toggle-appearance-standard.mat-button-toggle-checked {
+  background-color: $mainColor !important;
+  color: #fff !important;
+}

@@ -17,6 +17,7 @@ export class ProductFormComponent implements OnInit {
   categories: any;
   editmode = false;
   productId: any;
+  switch: boolean = false;
   constructor(
     private _categoryService: CategoriesService,
     private _productService: ProductService,
@@ -76,13 +77,18 @@ export class ProductFormComponent implements OnInit {
             this.form.controls['discount'].setValue(+products?.discount || 0);
             // this.form.controls['ar_name'].setValue(products.ar_name);
             // this.form.controls['en_name'].setValue(products.en_name);
-            this.form.controls['ar_brand'].setValue(products.brand.ar);
-            this.form.controls['en_brand'].setValue(products.brand.en);
+            this.form.controls['ar_brand'].setValue(products.type.ar);
+            this.form.controls['en_brand'].setValue(products.type.en);
             this.form.controls['ar_type'].setValue(products.type.ar);
             this.form.controls['en_type'].setValue(products.type.ar);
-            this.form.controls['featured'].setValue(products.featured);
-            this.form.controls['category_id'].setValue(products.category_id);
+            this.form.controls['featured'].setValue(
+              products.featured == 0 ? false : true
+            );
+            this.form.controls['category_id'].setValue(products.category.id);
+            this.form.controls['image'].setValue(products.image_url);
+
             this.imageDisplay = products.image_url;
+
             this.form.controls['image'].setValidators([]);
             this.form.controls['image'].updateValueAndValidity();
           });
@@ -148,7 +154,11 @@ export class ProductFormComponent implements OnInit {
 
   prepareFormData() {
     const formData = new FormData();
-    Object.entries(this.form.value).forEach(([key, value]: any) => {
+    const formObject = {
+      ...this.form.value,
+      featured: this.form.get('featured').value == true ? 1 : 0,
+    };
+    Object.entries(formObject).forEach(([key, value]: any) => {
       formData.append(key, value);
     });
 
@@ -156,60 +166,11 @@ export class ProductFormComponent implements OnInit {
   }
 
   onSubmit() {
+    debugger;
     console.log(this.prepareFormData());
 
     if (this.form.invalid) return;
     const productFormData: any = this.prepareFormData();
-
-    // productFormData.append(
-    //   'ar_name',
-    //   this.form.value.ar_name ? this.form.value.ar_name : ''
-    // );
-    // productFormData.append(
-    //   'en_name',
-    //   this.form.value.en_name ? this.form.value.en_name : ''
-    // );
-    // productFormData.append(
-    //   'ar_description',
-    //   this.form.value.ar_description ? this.form.value.ar_description : ''
-    // );
-    // productFormData.append(
-    //   'en_description',
-    //   this.form.value.en_description ? this.form.value.en_description : ''
-    // );
-    // productFormData.append(
-    //   'image',
-    //   this.form.value.image ? this.form.value.image : ''
-    // );
-    // productFormData.append(
-    //   'ar_brand',
-    //   this.form.value.brand ? this.form.value.ar_brand : ''
-    // );
-    // productFormData.append(
-    //   'en_brand',
-    //   this.form.value.brand ? this.form.value.en_brand : ''
-    // );
-    // productFormData.append('price', JSON.stringify(this.form.value.price));
-    // productFormData.append(
-    //   'category_id',
-    //   JSON.stringify(this.form.value.category_id)
-    // );
-    // productFormData.append(
-    //   'quantity',
-    //   JSON.stringify(this.form.value.quantity)
-    // );
-    // productFormData.append(
-    //   'featured',
-    //   JSON.stringify(this.form.value.featured)
-    // );
-    // productFormData.append(
-    //   'discount',
-    //   JSON.stringify(this.form.value.discount)
-    // );
-    // // productFormData.append('ar_status', JSON.stringify(this.form.value.ar_status));
-    // // productFormData.append('en_status', JSON.stringify(this.form.value.en_status));
-    // productFormData.append('ar_type', JSON.stringify(this.form.value.ar_type));
-    // productFormData.append('en_type', JSON.stringify(this.form.value.en_type));
 
     if (this.editmode) {
       this._updateProduct(productFormData);

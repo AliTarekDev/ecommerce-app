@@ -41,7 +41,7 @@ export class ProductService {
   }
 
   getProduct(id: any): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}services/products/${id}`);
+    return this.http.get<any>(`${this.apiUrl}specific-product/${id}`);
   }
 
   updateProduct(product: any, productId) {

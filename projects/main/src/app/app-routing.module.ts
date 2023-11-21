@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NavLayoutComponent } from './layout/nav-layout/nav-layout.component';
 import { AuthGuard } from 'projects/main/guards/auth.guard';
+import { TranslateService } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'en/home',
+    redirectTo: 'ar/home',
     pathMatch: 'full',
   },
   {
@@ -55,6 +56,7 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {
+  constructor(public translateService: TranslateService) {}
   static forChild():
     | any[]
     | import('@angular/core').Type<any>

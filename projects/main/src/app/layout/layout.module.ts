@@ -17,6 +17,7 @@ import { ShopByCategoryComponent } from './components/shop-by-category/shop-by-c
 import { ImagePreviewComponent } from './components/image-preview/image-preview.component';
 import { LayoutAboutComponent } from './components/layout-about/layout-about.component';
 import { VideoPlayerComponent } from './components/video-player/video-player.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { VideoPlayerComponent } from './components/video-player/video-player.com
     ImagePreviewComponent,
     LayoutAboutComponent,
     VideoPlayerComponent,
+    ContactUsComponent,
   ],
   imports: [CommonModule, LayoutRoutingModule, SharedModule, CarouselModule],
 })

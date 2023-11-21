@@ -8,7 +8,7 @@
       <div class="col-md-6 col-lg-3 col-xl-3">
         <div class="footer-widget">
           <div class="logo">
-            <a href="#">
+            <a>
               <img src="./assets/images/logo-dark.png" alt="" />
             </a>
           </div>
@@ -26,19 +26,19 @@
           <div class="footer-menu">
             <ul>
               <li>
-                <a href="#">{{ "repeatedQuestion" | translate }}</a>
+                <a>{{ "repeatedQuestion" | translate }}</a>
               </li>
               <li>
-                <a href="#">{{ "termsAndConditions" | translate }}</a>
+                <a>{{ "termsAndConditions" | translate }}</a>
               </li>
               <li>
-                <a href="#">{{ "ReturnAndExchange" | translate }}</a>
+                <a>{{ "ReturnAndExchange" | translate }}</a>
               </li>
               <li>
-                <a href="#">{{ "shipping" | translate }}</a>
+                <a>{{ "shipping" | translate }}</a>
               </li>
               <li>
-                <a href="#">{{ "Locations" | translate }}</a>
+                <a>{{ "Locations" | translate }}</a>
               </li>
             </ul>
           </div>
@@ -51,71 +51,91 @@
           <div class="footer-menu">
             <ul>
               <li>
-                <a href="#">{{ "about" | translate }}</a>
+                <a [routerLink]="[translate.currentLang + '/about']">{{
+                  "about" | translate
+                }}</a>
               </li>
               <li>
-                <a href="#">{{ "designStudio" | translate }}</a>
+                <a>{{ "designStudio" | translate }}</a>
               </li>
               <li>
-                <a href="#">{{ "creatorsCircle" | translate }}</a>
-              </li>
-              <li>
-                <a href="#">{{ "projects" | translate }}</a>
-              </li>
-              <li>
-                <a href="#">{{ "Careers" | translate }}</a>
-              </li>
-              <li>
-                <a href="#">{{ "Journals" | translate }}</a>
-              </li>
-              <li>
-                <a href="#">{{ "callUs" | translate }}</a>
+                <a>{{ "creatorsCircle" | translate }}</a>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <!-- /.col-xl-3 -->
+
       <div class="col-md-6 col-lg-3 col-xl-3">
         <div class="footer-widget">
           <div class="footer-menu">
             <ul>
               <li>
-                <a href="#">{{ "sittingRoom" | translate }}</a>
+                <a
+                  [routerLink]="[
+                    translate.currentLang + '/product/product-list'
+                  ]"
+                  >{{ "projects" | translate }}</a
+                >
               </li>
               <li>
-                <a href="#">{{ "diningRoom" | translate }}</a>
+                <a>{{ "Careers" | translate }}</a>
               </li>
               <li>
-                <a href="#">{{ "bedRoom" | translate }}</a>
+                <a>{{ "Journals" | translate }}</a>
               </li>
               <li>
-                <a href="#">{{ "accesories" | translate }}</a>
-              </li>
-              <li>
-                <a href="#">{{ "liquidation" | translate }}</a>
+                <a [routerLink]="[translate.currentLang + '/contact']">{{
+                  "callUs" | translate
+                }}</a>
               </li>
             </ul>
           </div>
         </div>
-
-        <!-- <div class="footer-widget">
-					<h3>News & Updates</h3>
-					<p>Sign up to get the latest on sales, new releases and more …</p>
-					<div class="footer-subscribe-wrapper">
-						<input placeholder="Enter Keyword" type="text">
-						<button type="submit">SUBSCRIBE</button>
-					</div>
-
-				</div> -->
       </div>
+      <!-- /.col-xl-3 -->
+      <!-- <div class="col-md-6 col-lg-3 col-xl-3">
+        <div class="footer-widget">
+          <div class="footer-menu">
+            <ul>
+              <li *ngFor="let cat of categories">
+                <a
+                  *ngIf="translate.currentLang == 'ar'"
+                  style="cursor: pointer"
+                  [routerLink]="[
+                    './' +
+                      translate.currentLang +
+                      '/product/product-list/' +
+                      cat.id
+                  ]"
+                  >{{ cat?.name?.ar }}</a
+                >
+                <a
+                  *ngIf="translate.currentLang == 'en'"
+                  style="cursor: pointer"
+                  [routerLink]="[
+                    './' +
+                      translate.currentLang +
+                      '/product/product-list/' +
+                      cat.id
+                  ]"
+                  >{{ cat?.name?.en }}</a
+                >
+              </li>
+      
+            </ul>
+          </div>
+        </div>
+
+      
+      </div> -->
       <!-- /.col-xl-3 -->
     </div>
 
     <div class="row companyName">
-      <div class="col-12">
+      <!-- <div class="col-12">
         <p>{{ "IndustrialProductionForcesCompany" | translate }}</p>
-      </div>
+      </div> -->
       <div class="col-12">
         <div class="social">
           <ul>

@@ -25,21 +25,25 @@
     <div class="row">
       <div class="order-2 order-lg-1 col-lg-3 col-xl-3">
         <div class="shop-sidebar left-side">
-          <div class="sidebar-widget sidebar-search">
+          <div class="sidebar-widget sidebar-search" *ngIf="!isCategoryPage">
             <input
+              (input)="filterByName($event)"
+              (keyup.enter)="sendSearchName(inp.value)"
               type="text"
               placeholder="{{ 'searchProduct' | translate }}...."
+              #inp
             />
             <button
               type="submit"
               [ngStyle]="{
                 right: _translate.getCurrentLanguage() == 'ar' ? '80%' : 0
               }"
+              (click)="sendSearchName(inp.value)"
             >
               <i class="fas fa-search"></i>
             </button>
           </div>
-          <div class="sidebar-widget category-widget">
+          <div class="sidebar-widget category-widget" *ngIf="!isCategoryPage">
             <h6 style="text-transform: uppercase">
               {{ "productCategories" | translate }}
             </h6>
@@ -62,6 +66,7 @@
                   </div>
                   <div>
                     <mat-checkbox
+                      [checked]="category?.checked"
                       (change)="filterByCategory(category)"
                     ></mat-checkbox>
                   </div>
@@ -70,18 +75,30 @@
             </ul>
           </div>
 
-          <div class="sidebar-widget range-widget">
+          <div class="sidebar-widget range-widget" *ngIf="!isCategoryPage">
             <h6 style="text-transform: uppercase">
               {{ "searchPrice" | translate }}
             </h6>
             <div class="price-range">
               <div id="slider-range"></div>
-              <ngx-slider
+              <!-- <ngx-slider
                 [(value)]="minValue"
                 [(highValue)]="maxValue"
                 [options]="options"
-              ></ngx-slider>
-              <span>Price :</span>
+              ></ngx-slider> -->
+              <mat-button-toggle-group
+                name="fontStyle"
+                aria-label="Font Style"
+                (change)="filterByPrice($event.value)"
+              >
+                <mat-button-toggle value="priceLtH">{{
+                  "lowToHigh" | translate
+                }}</mat-button-toggle>
+                <mat-button-toggle value="priceHtL">{{
+                  "highToLow" | translate
+                }}</mat-button-toggle>
+              </mat-button-toggle-group>
+              <!-- <span>Price :</span> -->
             </div>
           </div>
 
@@ -96,7 +113,7 @@
             </ul>
           </div> -->
 
-          <div class="sidebar-widget product-widget">
+          <div class="sidebar-widget product-widget" *ngIf="!isCategoryPage">
             <h6>{{ "BestSeller" | translate }}</h6>
             <div class="wid-pro">
               <div class="sp-img">
@@ -104,26 +121,26 @@
               </div>
               <div class="small-pro-details">
                 <h5 class="title">
-                  <a href="#">{{ "Contrasting" | translate }} </a>
+                  <!-- <a href="#">{{ "Contrasting" | translate }} </a> -->
                 </h5>
                 <!-- <span>$60</span> -->
                 <!-- <span class="pre-price">$80</span> -->
                 <div class="rating">
                   <ul>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -136,26 +153,26 @@
               </div>
               <div class="small-pro-details">
                 <h5 class="title">
-                  <a href="#">{{ "Contrasting" | translate }}</a>
+                  <!-- <a href="#">{{ "Contrasting" | translate }}</a> -->
                 </h5>
                 <!-- <span>$60</span> -->
                 <!-- <span class="pre-price">$80</span> -->
                 <div class="rating">
                   <ul>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -168,26 +185,26 @@
               </div>
               <div class="small-pro-details">
                 <h5 class="title">
-                  <a href="#">{{ "Contrasting" | translate }} </a>
+                  <!-- <a href="#">{{ "Contrasting" | translate }} </a> -->
                 </h5>
                 <!-- <span>$60</span> -->
                 <!-- <span class="pre-price">$80</span> -->
                 <div class="rating">
                   <ul>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -200,26 +217,26 @@
               </div>
               <div class="small-pro-details">
                 <h5 class="title">
-                  <a href="#">{{ "Contrasting" | translate }} </a>
+                  <!-- <a href="#">{{ "Contrasting" | translate }} </a> -->
                 </h5>
                 <!-- <span>$60</span>
                 <span class="pre-price">$80</span> -->
                 <div class="rating">
                   <ul>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="far fa-star"></i></a>
+                      <a><i class="far fa-star"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -227,15 +244,21 @@
             </div>
           </div>
 
-          <div class="sidebar-widget advertise-img">
-            <a href="#" class="img">
+          <div class="sidebar-widget advertise-img" *ngIf="!isCategoryPage">
+            <a class="img">
               <img src="./assets/images/home/14.jpeg" alt="" />
             </a>
           </div>
         </div>
       </div>
       <!-- /.col-xl-3 -->
-      <div class="order-1 order-lg-2 col-lg-9 col-xl-9">
+      <div
+        [ngClass]="
+          !isCategoryPage
+            ? 'order-1 order-lg-2 col-lg-9 col-xl-9'
+            : ' col-lg-12 col-xl-12'
+        "
+      >
         <div class="shop-sorting-area row">
           <div class="col-4 col-sm-4 col-md-6">
             <ul class="nav nav-tabs shop-btn" id="myTab" role="tablist">
@@ -244,7 +267,6 @@
                   class="nav-link active"
                   id="home-tab"
                   data-toggle="tab"
-                  href="#home"
                   role="tab"
                   aria-controls="home"
                   aria-selected="true"
@@ -268,13 +290,19 @@
           <!-- /.col-->
           <div class="col-12 col-sm-8 col-md-6">
             <div class="sort-by">
-              <span>Sort by :</span>
+              <span>{{ "sortBy" | translate }} :</span>
               <select class="orderby" name="orderby">
-                <option value="menu_order">Default sorting</option>
-                <option value="popularity">Sort by popularity</option>
-                <option value="rating">Sort by average rating</option>
-                <option value="date">Sort by newness</option>
-                <option selected="selected">Best Selling</option>
+                <option value="menu_order">
+                  {{ "defaultSorting" | translate }}
+                </option>
+                <option value="popularity">
+                  {{ "sortPopularity" | translate }}
+                </option>
+                <option value="rating">{{ "sortByAvg" | translate }}</option>
+                <option value="date">{{ "sortByNew" | translate }}</option>
+                <option selected="selected">
+                  {{ "bestSelling" | translate }}
+                </option>
               </select>
             </div>
           </div>

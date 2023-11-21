@@ -1,4 +1,4 @@
-<section class="layout mt-5">
+<!-- <section class="layout mt-5">
   <div class="container">
     <div class="content">
       <div class="block-content">
@@ -9,9 +9,7 @@
         </div>
         <div class="text-content">
           <h3 class="appear">
-            Keeping this at the heart of everything we do, we serve a rapidly
-            evolving clientele, keeping them in touch with the latest, enabling
-            them to express their individuality.
+            {{ "layoutAbout" | translate }}
           </h3>
         </div>
       </div>
@@ -23,15 +21,56 @@
         </div>
         <div class="text-content">
           <p data-animation="fadeInUp2" class="appear">
-            Combining a century old family lineage in the craft of fine
-            furniture with a focus on design and innovation, Al Huzaifa has
-            defined furniture fashion in the region for over four decades now.
+            {{ "layoutAbout2" | translate }}
           </p>
           <div data-animation="fadeInUp3" class="appear">
-            <a class="btn-two" href="/en/about-us">Learn more</a>
+            <a
+              class="btn-two"
+              [routerLink]="['/' + translate.currentLang + '/about']"
+              >{{ "learnMore" | translate }}</a
+            >
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section> -->
+
+<section class="layout">
+  <div class="container grid">
+    <div class="layout-1">
+      <img
+        src="./assets/images/home/15.jpeg"
+        alt=""
+        [ngStyle]="{
+          'max-height': translate.currentLang == 'ar' ? '50%' : '100%'
+        }"
+      />
+      <h3 class="appear mt-3">
+        {{ "layoutAbout" | translate }}
+      </h3>
+    </div>
+
+    <div class="layout-2">
+      <img
+        src="./assets/images/home/12.jpeg"
+        alt=""
+        [ngStyle]="{
+          'max-height': translate.currentLang == 'ar' ? '100%' : '50%'
+        }"
+      />
+
+      <h3 class="appear mt-3">
+        {{ "layoutAbout2" | translate }}
+      </h3>
+    </div>
+  </div>
+
+  <div class="container d-flex justify-content-end">
+    <a
+      class="btn-two"
+      [routerLink]="['/' + translate.currentLang + '/about']"
+      >{{ "learnMore" | translate }}</a
+    >
   </div>
 </section>

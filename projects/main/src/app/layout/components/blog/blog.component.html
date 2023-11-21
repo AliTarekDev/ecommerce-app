@@ -1,4 +1,4 @@
-<section class="blog mt-5 mb-5">
+<!-- <section class="blog mt-5 mb-5">
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-7">
@@ -31,4 +31,48 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+<!-- Start About 
+    ============================================= -->
+<div id="about" class="about-area bg-gray default-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 promo-video">
+        <img src="./assets/images/home/11.jpeg" alt="image" draggable="false" />
+      </div>
+      <div class="col-md-7 default info">
+        <h4>{{ "whyUs" | translate }}</h4>
+        <h2>
+          {{ "allYouNeed" | translate }} {{ "luxuryAndElegance" | translate }}
+        </h2>
+        <p>
+          <!-- Both rest of know draw fond post as. It agreement defective to
+          excellent. Feebly do engage of narrow. Extensive repulsive belonging
+          depending if promotion be zealously as. Preference inquietude ask now
+          are dispatched led appearance. Small meant in so doubt hopes. -->
+          {{ "h6" | translate }}
+        </p>
+        <!-- <ul>
+          <li>
+            <h5>Rocket Fast</h5>
+            <span>Elderly is detract tedious assured private</span>
+          </li>
+          <li>
+            <h5>Custom Framework</h5>
+            <span>Do travelling companions contrasted</span>
+          </li>
+          <li>
+            <h5>Minimal Design</h5>
+            <span>Mistress strongly remember up</span>
+          </li>
+        </ul> -->
+        <a
+          [routerLink]="['/' + translate.currentLang + '/product/product-list']"
+          class="btn-two"
+          >{{ "shopNow" | translate }}</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End About -->

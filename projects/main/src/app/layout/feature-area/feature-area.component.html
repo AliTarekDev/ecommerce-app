@@ -3,6 +3,20 @@
 <!--=========================-->
 
 <section class="feature-area">
+  <div class="section-heading" data-aos="fade-up" data-aos-duration="2000">
+    <h3
+      [ngStyle]="{
+        display: 'flex',
+        'justify-content': 'center',
+        'flex-direction': translate.currentLang == 'ar' ? 'row-reverse' : 'row',
+        gap: '1rem'
+      }"
+    >
+      {{ "marvel" | translate }} <span>{{ "offers" | translate }}</span>
+    </h3>
+
+    <p>{{ "h7" | translate }}</p>
+  </div>
   <div class="container-fluid custom-container">
     <div class="row">
       <!-- Single Feature -->
@@ -13,12 +27,22 @@
       >
         <div class="sin-feature">
           <div class="inner-sin-feature">
-            <div class="icon">
+            <div
+              class="icon"
+              [ngStyle]="{
+                'padding-right': translate.currentLang == 'ar' ? '15px' : ''
+              }"
+            >
               <i class="fa-solid fa-truck-fast"></i>
             </div>
-            <div class="f-content">
+            <div
+              class="f-content"
+              [ngStyle]="{
+                'text-align': translate.currentLang == 'ar' ? 'right' : 'left'
+              }"
+            >
               <h6>
-                <a href="#">{{ "freeShipping" | translate }}</a>
+                <a>{{ "freeShipping" | translate }}</a>
               </h6>
               <p>{{ "freeShippingAllOrder" | translate }}</p>
             </div>
@@ -34,12 +58,22 @@
       >
         <div class="sin-feature">
           <div class="inner-sin-feature">
-            <div class="icon">
+            <div
+              class="icon"
+              [ngStyle]="{
+                'padding-right': translate.currentLang == 'ar' ? '15px' : ''
+              }"
+            >
               <i class="fa-solid fa-globe"></i>
             </div>
-            <div class="f-content">
+            <div
+              class="f-content"
+              [ngStyle]="{
+                'text-align': translate.currentLang == 'ar' ? 'right' : 'left'
+              }"
+            >
               <h6>
-                <a href="#">{{ "onlineSupport" | translate }}</a>
+                <a>{{ "onlineSupport" | translate }}</a>
               </h6>
               <p>{{ "onlineSupport" | translate }}</p>
             </div>
@@ -55,14 +89,24 @@
       >
         <div class="sin-feature">
           <div class="inner-sin-feature">
-            <div class="icon">
-              <i class="fa-solid fa-dollar-sign"></i>
+            <div
+              class="icon"
+              [ngStyle]="{
+                'padding-right': translate.currentLang == 'ar' ? '15px' : ''
+              }"
+            >
+              <i class="fa-solid fa-phone"></i>
             </div>
-            <div class="f-content">
+            <div
+              class="f-content"
+              [ngStyle]="{
+                'text-align': translate.currentLang == 'ar' ? 'right' : 'left'
+              }"
+            >
               <h6>
-                <a href="#">{{ "moneyReturn" | translate }}</a>
+                <a>{{ "customerService" | translate }}</a>
               </h6>
-              <p>{{ "backGuarantee" | translate }}</p>
+              <p>{{ "customerService" | translate }}</p>
             </div>
           </div>
         </div>
@@ -76,12 +120,22 @@
       >
         <div class="sin-feature">
           <div class="inner-sin-feature">
-            <div class="icon">
+            <div
+              class="icon"
+              [ngStyle]="{
+                'padding-right': translate.currentLang == 'ar' ? '15px' : ''
+              }"
+            >
               <i class="fa-solid fa-percent"></i>
             </div>
-            <div class="f-content">
+            <div
+              class="f-content"
+              [ngStyle]="{
+                'text-align': translate.currentLang == 'ar' ? 'right' : 'left'
+              }"
+            >
               <h6>
-                <a href="#">{{ "memberDiscount" | translate }}</a>
+                <a>{{ "memberDiscount" | translate }}</a>
               </h6>
               <p>{{ "onEveryOrder" | translate }}</p>
             </div>
@@ -90,6 +144,5 @@
       </div>
     </div>
   </div>
-  <!-- /.container-fluid -->
 </section>
 <!-- /.feature-area -->

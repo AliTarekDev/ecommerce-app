@@ -44,9 +44,13 @@
             <span class="header-subtitle">{{ "summerSale" | translate }}</span>
           </h1>
           <div class="load-more-wrapper">
-            <a href="create-account.html" class="btn-two">{{
-              "shopFurniture" | translate
-            }}</a>
+            <a
+              [routerLink]="[
+                '/' + translate.currentLang + '/product/product-list'
+              ]"
+              class="btn-two"
+              >{{ "shopFurniture" | translate }}</a
+            >
           </div>
 
           <!-- <div class="advirtise">
@@ -64,14 +68,22 @@
         />
 
         <div class="carousel-item-data">
-          <h1>
+          <h1
+            [ngStyle]="{
+              direction: translate.currentLang == 'ar' ? 'ltr' : 'rtl'
+            }"
+          >
             {{ "summer" | translate }}
             <span class="header-subtitle">{{ "collections" | translate }}</span>
           </h1>
           <div class="load-more-wrapper">
-            <a href="create-account.html" class="btn-two">{{
-              "shopNow" | translate
-            }}</a>
+            <a
+              [routerLink]="[
+                '/' + translate.currentLang + '/product/product-list'
+              ]"
+              class="btn-two"
+              >{{ "shopNow" | translate }}</a
+            >
           </div>
         </div>
       </div>
@@ -85,11 +97,18 @@
         />
 
         <div class="carousel-item-data">
-          <h1>{{ "eatFood" | translate }}</h1>
+          <h1>
+            {{ "eatFood" | translate }}
+            <span class="header-subtitle">{{ "funny" | translate }}</span>
+          </h1>
           <div class="load-more-wrapper">
-            <a href="create-account.html" class="btn-two">{{
-              "shopNow" | translate
-            }}</a>
+            <a
+              [routerLink]="[
+                '/' + translate.currentLang + '/product/product-list'
+              ]"
+              class="btn-two"
+              >{{ "shopNow" | translate }}</a
+            >
           </div>
         </div>
       </div>
