@@ -77,8 +77,8 @@ export class ProductFormComponent implements OnInit {
             this.form.controls['discount'].setValue(+products?.discount || 0);
             // this.form.controls['ar_name'].setValue(products.ar_name);
             // this.form.controls['en_name'].setValue(products.en_name);
-            this.form.controls['ar_brand'].setValue(products.brand.ar);
-            this.form.controls['en_brand'].setValue(products.brand.en);
+            this.form.controls['ar_brand'].setValue(products.brand.ar || '');
+            this.form.controls['en_brand'].setValue(products.brand.en || '');
             this.form.controls['ar_type'].setValue(products.type.ar || '');
             this.form.controls['en_type'].setValue(products.type.en || '');
             this.form.controls['featured'].setValue(
